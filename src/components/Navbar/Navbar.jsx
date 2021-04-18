@@ -1,8 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Navbar.module.css';
+import NavFriend from './NavFriend/NavFriend';
 
 const Navbar = (props) => {
+
+   let fr = Math.floor(Math.random() * ((props.state.length - 1) - 1) + 1);
+
    return (
       <div className={styles.nav}>
          <ul className={styles.font}>
@@ -24,18 +28,9 @@ const Navbar = (props) => {
          </ul>
          <div className={styles.fri}>Friends</div>
          <div className={styles.friends}>
-            <div className={styles.friend}>
-               <img className={styles.avatar} src={props.state[0].avatar} alt="logo"></img>
-               <div className={styles.name}>{props.state[0].name}</div>
-            </div>
-            <div className={styles.friend}>
-               <img className={styles.avatar} src={props.state[1].avatar} alt="logo"></img>
-               <div className={styles.name}>{props.state[1].name}</div>
-            </div>
-            <div className={styles.friend}>
-               <img className={styles.avatar} src={props.state[2].avatar} alt="logo"></img>
-               <div className={styles.name}>{props.state[2].name}</div>
-            </div>
+            <NavFriend friend={props.state[fr - 1]} />
+            <NavFriend friend={props.state[fr]} />
+            <NavFriend friend={props.state[fr + 1]} />
          </div>
 
       </div>

@@ -1,6 +1,33 @@
 .message {
-   padding: 10px;
+   display: grid;
+   grid-template-columns: 55px 1fr;
+
+}
+
+.messageText {
+   position: relative;
+   padding: 10px 10px 10px 13px;
    border-radius: 10px;
    background-color: #e8ecee;
    margin-bottom: 10px;
+}
+
+.messageText::before {
+   content: '';
+   position: absolute;
+   left: -5px;
+   top: 12px;
+   width: 16px;
+   height: 16px;
+   transform: rotate(45deg);
+   background-color: #e8ecee;
+}
+
+.author {
+   width: 40px;
+   height: 40px;
+   text-align: center;
+   line-height: 40px;
+   border-radius: 50%;
+   background-color: #fff;
 }

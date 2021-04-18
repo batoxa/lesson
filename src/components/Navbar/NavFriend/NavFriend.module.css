@@ -1,0 +1,16 @@
+.friend {
+   display: grid;
+   grid-template-columns: 30px 1fr;
+   padding-bottom: 10px;
+}
+
+.avatar {
+   width: 30px;
+   height: 30px;
+}
+.name{
+   padding-left: 10px;
+   font-size: small;
+   line-height: 30px;
+   color: #7cd3ff;
+}

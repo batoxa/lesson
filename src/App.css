@@ -9,6 +9,7 @@
     grid-template-areas: "h h" "nav c";
     grid-template-rows: 50px 1fr;
     grid-template-columns: 2fr 10fr;
+    height: 100%;
 }
 
 .app-wrapper-content {
