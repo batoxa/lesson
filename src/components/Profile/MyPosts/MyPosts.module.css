@@ -1,0 +1,31 @@
+.MyPosts {
+   padding: 20px;
+}
+
+.NewPost textarea {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   width: 100%;
+   resize: none;
+   padding: 5px;
+   margin-bottom: 5px;
+}
+
+.NewPost {
+   background-color: #a9c9da;
+   padding: 10px;
+
+}
+
+.NewPost button {
+   border: none;
+   border-radius: 7px;
+   font-weight: 700;
+   color: white;
+   text-decoration: none;
+   padding: 10px 10px 10px;
+   background: #5096bb;
+}
+
+.Post {
+   margin-top: 20px;
+}

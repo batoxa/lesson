@@ -1,0 +1,16 @@
+.content {
+   grid-area: c;
+   background-color: #c8dae4;
+}
+
+.posts {
+   padding: 20px;
+}
+
+.newpost {
+   padding: 10px;
+}
+
+.post {
+   padding: 10px;
+}

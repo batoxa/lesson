@@ -1,0 +1,28 @@
+.Post {
+   padding: 10px;
+   background-color: #a9c9da;
+}
+
+.content {
+   display: flex;
+
+}
+
+.Post img {
+   width: 60px;
+   border-radius: 25%;
+   box-shadow: 0 0 10px #394f77;
+}
+
+.txt {
+   padding-left: 20px;
+   color: #b40000;
+}
+
+.like {
+   margin-top: 10px;
+   border-top: #394f77 1px solid;
+   text-align: right;
+   color: #394f77;
+   padding-right: 10px;
+}

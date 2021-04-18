@@ -1,0 +1,59 @@
+.nav {
+   grid-area: nav;
+   background-color: #00476b;
+   margin: 0;
+   padding: 30px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-weight: 600;
+}
+
+.font {
+   list-style: none;
+   padding-left: 0;
+   margin: 0;
+   padding-bottom: 60px;
+}
+
+.nav li {
+   height: 30px;
+}
+
+.nav li a {
+   line-height: 30px;
+   color: #ffffff;
+   text-decoration: none;
+}
+
+.nav li a:hover {
+   color: red;
+}
+
+.nav li .activeLink {
+   color: gold;
+}
+
+.fri {
+   color: #7cd3ff;
+   padding-bottom: 20px;
+}
+
+.friend {
+   display: grid;
+   grid-template-columns: 30px 1fr;
+   padding-bottom: 10px;
+}
+
+.avatar {
+   width: 30px;
+   height: 30px;
+}
+.name{
+   padding-left: 10px;
+   font-size: small;
+   line-height: 30px;
+   color: #7cd3ff;
+}
+
+.sett{
+   padding-top: 10px;
+}
