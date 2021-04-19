@@ -1,3 +1,5 @@
+import { renderTree } from "../render";
+
 let state = {
 
    sideBar: {
@@ -9,8 +11,8 @@ let state = {
    },
    profilePage: {
       postData: [
-         // { id: 1, message: "Hi, how are you?", likecounts: 5 },
-         // { id: 2, message: "Ok", likecounts: 3 },
+         { id: 1, message: "Hi, how are you?", likecounts: 5 },
+         { id: 2, message: "Ok", likecounts: 3 },
          { id: 3, message: "Yoooo, nice!", likecounts: 7 }
       ],
       userData: [
@@ -36,11 +38,13 @@ let state = {
 }
 
 export let addPost = (postMessage) => {
-   let newPost = { 
-      id: 4, 
-      message: postMessage, 
-      likecounts: 0 };
+   let newPost = {
+      id: 4,
+      message: postMessage,
+      likecounts: 0
+   };
    state.profilePage.postData.push(newPost);
+   renderTree(state);
 }
 
 

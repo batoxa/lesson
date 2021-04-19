@@ -2,7 +2,6 @@
    display: flex;
    grid-area: h;
    background-color: #0081c2;
-   ;
    text-align: left;
    padding: 10px;
 }
@@ -10,9 +9,7 @@
 .title {
    color: #7cd3ff;
    font-weight: 200;
-   font-size: 30px;
-   font-family: 'Kaushan Script', cursive;
-
+   font-size: 25px;
    line-height: 25px;
    padding-left: 10px;
 }

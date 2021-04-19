@@ -1,18 +1,18 @@
 .head {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    padding: 20px;
+   display: grid;
+   grid-template-columns: 150px 1fr;
+   padding: 20px;
 }
 
 .userAvatar {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
+   border-radius: 50%;
+   width: 150px;
+   height: 150px;
 }
 
 .userData {
-    padding-left: 20px;
-    font-family: 'Kaushan Script', cursive;
-    font-size: 50px;
-    color: #00476b;
+   padding-left: 20px;
+   font-weight: 400;
+   font-size: 50px;
+   color: #00476b;
 }

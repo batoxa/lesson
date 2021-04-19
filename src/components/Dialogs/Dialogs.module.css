@@ -28,7 +28,6 @@
 }
 
 .newMessage textarea {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
     resize: none;
     padding: 10px;
