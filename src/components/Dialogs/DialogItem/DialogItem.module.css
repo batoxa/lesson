@@ -8,6 +8,7 @@
 .name {
    padding-left: 20px;
    line-height: 50px;
+   color: #00476b;
 }
 
 .avatar {
@@ -23,11 +24,10 @@
 }
 
 .dialog .active {
-   color: dodgerblue;
    font-weight: 800;
 
 }
 
-.dialog:hover {
+.dialog a:hover .name{
    color: red;
 }

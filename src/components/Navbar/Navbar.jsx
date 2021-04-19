@@ -5,7 +5,7 @@ import NavFriend from './NavFriend/NavFriend';
 
 const Navbar = (props) => {
 
-   let friends = props.state.friendData.map(friend => <NavFriend name={friend.name} avatar={friend.avatar} />);
+   let friends = props.state.friendData.map(friend => <NavFriend name={friend.name} avatar={friend.avatar} key={friend.id}/>);
 
    return (
       <div className={styles.nav}>

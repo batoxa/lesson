@@ -35,6 +35,7 @@
     margin-bottom: 5px;
     border-radius: 10px;
     border: none;
+    outline: none;
 }
 
 .newMessage button {
@@ -45,4 +46,6 @@
     text-decoration: none;
     padding: 10px 10px 10px;
     background: #5096bb;
+    outline: none;
+
 }

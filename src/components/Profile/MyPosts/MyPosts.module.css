@@ -5,6 +5,7 @@
 .MyPosts h1 {
     font-family: 'Kaushan Script', cursive;
     color: #00476b;
+    margin-bottom: 10px;
 }
 
 .NewPost textarea {
@@ -15,6 +16,8 @@
     margin-bottom: 5px;
     border: none;
     border-radius: 5px;
+    outline: none;
+
 }
 
 .NewPost {
@@ -30,6 +33,8 @@
     text-decoration: none;
     padding: 10px 10px 10px;
     background: #5096bb;
+    outline: none;
+
 }
 
 .Post {

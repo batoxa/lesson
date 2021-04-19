@@ -4,13 +4,13 @@ import Post from './Post/Post';
 
 const MyPosts = (props) => {
 
-   let posts = props.postData.map(post => <Post message={post.message} likecounts={post.likecounts} />);
+   let posts = props.postData.map(post => <Post message={post.message} likecounts={post.likecounts} key={post.id} />);
 
    let newPostElement = React.createRef();
 
-   let addPost = () => {
+   let addingPost = () => {
       let text = newPostElement.current.value;
-      alert(text);
+      props.addPost(text);
    };
 
    return (
@@ -21,7 +21,7 @@ const MyPosts = (props) => {
                <textarea ref={newPostElement} placeholder="New posts" rows="3"></textarea>
             </div>
             <div>
-               <button onClick={addPost}>Add post</button>
+               <button onClick={addingPost}>Add post</button>
             </div>
          </div>
          <div className={styles.Post}>

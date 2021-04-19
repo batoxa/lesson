@@ -1,15 +1,16 @@
 * {
-    box-sizing: border-box;
+   box-sizing: border-box;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .app-wrapper {
-    display: grid;
-    margin: 0 auto;
-    width: 1200px;
-    grid-template-areas: "h h" "nav c";
-    grid-template-rows: 50px 1fr;
-    grid-template-columns: 2fr 10fr;
-    height: 100%;
+   display: grid;
+   margin: 0 auto;
+   width: 1200px;
+   grid-template-areas: "h h""nav c";
+   grid-template-rows: 50px 1fr;
+   grid-template-columns: 2fr 10fr;
+   height: 100%;
 }
 
 .app-wrapper-content {

@@ -10,6 +10,7 @@
    border-radius: 10px;
    background-color: #e8ecee;
    margin-bottom: 10px;
+   color: #00476b;
 }
 
 .messageText::before {
