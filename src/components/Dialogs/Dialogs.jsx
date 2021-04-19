@@ -5,8 +5,16 @@ import styles from './Dialogs.module.css';
 
 const Dialogs = (props) => {
 
-   let dialogsElements = props.state.dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id} avatar={dialog.avatar}/>);
-   let messagesElements = props.state.messagesData.map(message => <Message message={message.message} id={message.id}/>);
+   let dialogsElements = props.state.dialogsData.map(dialog => <DialogItem name={dialog.name} id={dialog.id} avatar={dialog.avatar} />);
+   let messagesElements = props.state.messagesData.map(message => <Message message={message.message} id={message.id} />);
+
+   let newMessageElement = React.createRef();
+
+   let addMessage = () => {
+      let text = newMessageElement.current.value;
+      alert(text);
+   };
+
 
    return (
       <div className={styles.dialogs}>
@@ -15,6 +23,14 @@ const Dialogs = (props) => {
          </div>
          <div className={styles.messages}>
             {messagesElements}
+         <div className={styles.newMessage}>
+            <div>
+               <textarea ref={newMessageElement} placeholder="New message" rows="3"></textarea>
+            </div>
+            <div>
+               <button onClick={addMessage}>Send</button>
+            </div>
+         </div>
          </div>
       </div >
    );

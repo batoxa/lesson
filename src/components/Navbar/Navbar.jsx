@@ -5,7 +5,7 @@ import NavFriend from './NavFriend/NavFriend';
 
 const Navbar = (props) => {
 
-   let fr = Math.floor(Math.random() * ((props.state.length - 1) - 1) + 1);
+   let friends = props.state.friendData.map(friend => <NavFriend name={friend.name} avatar={friend.avatar} />);
 
    return (
       <div className={styles.nav}>
@@ -28,9 +28,7 @@ const Navbar = (props) => {
          </ul>
          <div className={styles.fri}>Friends</div>
          <div className={styles.friends}>
-            <NavFriend friend={props.state[fr - 1]} />
-            <NavFriend friend={props.state[fr]} />
-            <NavFriend friend={props.state[fr + 1]} />
+            {friends}
          </div>
 
       </div>
