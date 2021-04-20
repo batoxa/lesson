@@ -4,23 +4,24 @@
 }
 
 .content {
-   display: flex;
-
+   display: grid;
+   grid-template-columns: 50px 1fr 50px;
 }
 
 .Post img {
    width: 40px;
-   border-radius: 30%;
+   border-radius: 7px;
 }
 
 .txt {
-   padding-left: 20px;
+   padding: 0 20px;
+   border-radius: 7px;
    color: #00476b;
+   background-color: #c8dae4;
 }
 
 .like {
    margin-top: 10px;
-   border-top: #394f77 1px solid;
    text-align: right;
    color: #394f77;
    padding-right: 10px;

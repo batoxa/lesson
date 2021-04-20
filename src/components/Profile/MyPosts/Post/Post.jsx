@@ -9,9 +9,9 @@ const Post = (props) => {
             <div className={styles.txt}>
                {props.message}
             </div>
-         </div>
-         <div className={styles.like}>
-            <span>like: {props.likecounts}</span>
+            <div className={styles.like}>
+               <i class="fa fa-thumbs-up" aria-hidden="true"></i>  {props.likecounts}
+            </div>
          </div>
       </div>
    );

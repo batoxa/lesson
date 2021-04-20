@@ -17,7 +17,8 @@ let state = {
       ],
       userData: [
          { id: 1, name: "Batoxa", avatar: "https://st3.depositphotos.com/3687485/13283/v/950/depositphotos_132834058-stock-illustration-bread-vector-illustration.jpg" }
-      ]
+      ],
+      newPostText: ""
    },
 
    dialogsPage: {
@@ -26,6 +27,7 @@ let state = {
          { id: 2, message: "Hello" },
          { id: 3, message: "Yoooo" }
       ],
+      newMessageText: "",
       dialogsData: [
          { id: 1, name: "Wise", avatar: "https://2.bp.blogspot.com/-P1KHVukRJpE/V8Tz6r0eZ8I/AAAAAAACFW0/I0r732kp2wgPSqXBFl0i_DkCndzrY5rLACLcB/s320/Wise.png" },
          { id: 2, name: "Total", avatar: "https://media.istockphoto.com/vectors/cow-icon-vector-id652692584" },
@@ -36,14 +38,35 @@ let state = {
    }
 
 }
-
-export let addPost = (postMessage) => {
+export let addPost = () => {
    let newPost = {
-      id: 4,
-      message: postMessage,
+      id: state.profilePage.postData.length + 1,
+      message: state.profilePage.newPostText,
       likecounts: 0
    };
    state.profilePage.postData.push(newPost);
+   state.profilePage.newPostText = '';
+   renderTree(state);
+}
+
+export let updateNewPostText = (newText) => {
+   state.profilePage.newPostText = newText;
+   renderTree(state);
+}
+
+export let addMessage = () => {
+   let newMessage = {
+      id: state.dialogsPage.messagesData.length + 1,
+      message: state.dialogsPage.newMessageText,
+      likecounts: 0
+   };
+   state.dialogsPage.messagesData.push(newMessage);
+   state.dialogsPage.newMessageText = '';
+   renderTree(state);
+}
+
+export let updateNewMessageText = (newText) => {
+   state.dialogsPage.newMessageText = newText;
    renderTree(state);
 }
 
