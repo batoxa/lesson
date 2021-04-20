@@ -10,7 +10,7 @@ const Post = (props) => {
                {props.message}
             </div>
             <div className={styles.like}>
-               <i class="fa fa-thumbs-up" aria-hidden="true"></i>  {props.likecounts}
+               <i className="fa fa-thumbs-up" aria-hidden="true"></i>  {props.likecounts}
             </div>
          </div>
       </div>
