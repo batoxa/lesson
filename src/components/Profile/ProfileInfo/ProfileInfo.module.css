@@ -1,13 +1,13 @@
 .head {
    display: grid;
-   grid-template-columns: 150px 1fr;
+   grid-template-columns: 100px 1fr;
    padding: 20px;
 }
 
 .userAvatar {
    border-radius: 50%;
-   width: 150px;
-   height: 150px;
+   width: 100px;
+   height: 100px;
 }
 
 .userData {
