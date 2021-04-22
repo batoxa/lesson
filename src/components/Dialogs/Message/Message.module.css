@@ -8,7 +8,7 @@
    position: relative;
    padding: 10px 10px 10px 13px;
    border-radius: 10px;
-   background-color: #e8ecee;
+   background-color: #fff;
    margin-bottom: 10px;
    color: #00476b;
 }
@@ -21,7 +21,7 @@
    width: 16px;
    height: 16px;
    transform: rotate(45deg);
-   background-color: #e8ecee;
+   background-color: #ffffff;
 }
 
 .author {

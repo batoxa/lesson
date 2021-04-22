@@ -19,8 +19,9 @@
 }
 
 .NewPost {
-    background-color: #a9c9da;
+   background-color: #c7c7c7;
     padding: 10px;
+    border-radius: 5px;
 }
 
 .NewPost button {
@@ -30,7 +31,7 @@
     color: white;
     text-decoration: none;
     padding: 10px 10px 10px;
-    background: #5096bb;
+    background: #00476b;
     outline: none;
 
 }

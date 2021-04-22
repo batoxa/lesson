@@ -1,6 +1,6 @@
 .Post {
    padding: 10px;
-   background-color: #a9c9da;
+   background-color: #c7c7c7;
 }
 
 .content {
@@ -14,10 +14,10 @@
 }
 
 .txt {
-   padding: 0 20px;
+   padding: 5px 10px;
    border-radius: 7px;
    color: #00476b;
-   background-color: #c8dae4;
+   background-color: #fff;
 }
 
 .like {

@@ -1,50 +1,51 @@
 .dialogs {
-    display: grid;
-    grid-template-columns: 200px 10fr;
-    height: 100%;
+   display: grid;
+   grid-template-columns: 200px 10fr;
+   height: 100%;
 }
 
 .dialogItems {
-    padding: 20px;
-    height: 100%;
-    background-color: #b7d0dd;
+   padding: 20px;
+   height: 100%;
+   background-color: #c7c7c7;
 }
 
 .dialogItems a {
-    text-decoration: none;
-    list-style: none;
-    color: black;
+   text-decoration: none;
+   list-style: none;
+   color: black;
 }
 
 .messages {
-    padding: 20px;
+   padding: 20px;
 }
 
 .newMessage {
-    background-color: #a9c9da;
-    padding: 10px;
-    text-align: right;
-    margin-top: 20px;
+   background-color: #c7c7c7;
+   border-radius: 5px;
+   padding: 10px;
+   text-align: right;
+   margin-top: 20px;
 }
 
 .newMessage textarea {
-    width: 100%;
-    resize: none;
-    padding: 10px;
-    margin-bottom: 5px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
+   width: 100%;
+   resize: none;
+   padding: 10px;
+   margin-bottom: 5px;
+   border-radius: 10px;
+   border: none;
+   outline: none;
 }
 
 .newMessage button {
-    border: none;
-    border-radius: 7px;
-    font-weight: 700;
-    color: white;
-    text-decoration: none;
-    padding: 10px 10px 10px;
-    background: #5096bb;
-    outline: none;
+   border: none;
+   border-radius: 7px;
+   font-weight: 700;
+   color: white;
+   text-decoration: none;
+   padding: 10px 10px 10px;
+   background: #00476b;
+   outline: none;
 
 }
