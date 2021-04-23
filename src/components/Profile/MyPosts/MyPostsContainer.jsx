@@ -5,12 +5,12 @@ import MyPosts from './MyPosts';
 const MyPostsContainer = (props) => {
    let state = props.store.getState();
 
-   let addingPost = () => {
-      props.store.dispatch(addPostActionCreater());
-   }
-
    let onPostChange = (text) => {
       props.store.dispatch(updateNewPostActionCreater(text));
+   }
+
+   let addingPost = () => {
+      props.store.dispatch(addPostActionCreater());
    }
 
    return (<MyPosts
