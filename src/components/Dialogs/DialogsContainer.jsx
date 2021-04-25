@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import { addMessageActionCreater, updateNewMessageActionCreater } from '../../redux/dialogs-reducer';
 import Dialogs from './Dialogs';
 
-let mapStateToPrors = (state) => {
+let mapStateToProps = (state) => {
    return {
       dialogsPage: state.dialogsPage
    }
 }
 
-let mapDispatchToPrors = (dispatch) => {
+let mapDispatchToProps = (dispatch) => {
    return {
       updateNewMessageActionCreater: (text) => {
          dispatch(updateNewMessageActionCreater(text));
@@ -20,7 +20,7 @@ let mapDispatchToPrors = (dispatch) => {
    }
 }
 
-const DialogsContainer = connect(mapStateToPrors, mapDispatchToPrors)(Dialogs);
+const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
 
 export default DialogsContainer;
 
