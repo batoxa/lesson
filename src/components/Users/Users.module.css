@@ -23,14 +23,15 @@
 .avatar img {
   width: 50px;
   height: 50px;
-  box-shadow: 0 0 10px #394f77;
+  /* box-shadow: 0 0 10px #394f77;
+  border-radius: 50%; */
 }
 
 .description {
    grid-area: description;
-   border-radius: 5px;
+   border-radius: 5px 0 0 5px;
    background-color: white;
-   padding: 5px;
+   padding: 10px;
 }
 
 .fullname {
@@ -48,19 +49,24 @@
 .follow {
    grid-area: follow;
    text-align: right;
+   border-radius: 0 5px 5px 0;
+   background-color: white;
+
 }
 
 .follow button {
-   width: 50px;
-   height: 50px;
-   line-height: 50px;
+   margin: 10px 10px 0 0;
+   width: 35px;
+   height: 35px;
+   line-height: 32px;
    border: none;
-   border-radius: 7px;
    font-weight: 800;
-   color: white;
    text-decoration: none;
-   background: #00476b;
+   background-color: #fff;
    outline: none;
    text-align: center;
-   font-size: large;
+   font-size: 30px;
+}
+.follow button i{
+   color: #00476b;
 }
