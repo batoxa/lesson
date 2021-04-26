@@ -6,12 +6,13 @@ import userPhoto from '../../assets/images/user.png';
 
 const Users = (props) => {
 
-   if (props.users.length === 0) {
-
-      axios.get("https://social-network.samuraijs.com/api/1.0/users")
-         .then(response => {
-            props.setUsers(response.data.items)
-         })
+   const getUsers = () => {
+      if (props.users.length === 0) {
+         axios.get("https://social-network.samuraijs.com/api/1.0/users")
+            .then(response => {
+               props.setUsers(response.data.items)
+            })
+      }
    }
 
    // followUser = (userId) => () => props.followUser(userId)
@@ -26,7 +27,7 @@ const Users = (props) => {
                {user.name}
             </div>
             <div className={styles.status}>
-               {user.status === null? "user.status": user.status}
+               {user.status === null ? "user.status" : user.status}
             </div>
             <div className={styles.location}>
                {"user.location.city"}, {"user.location.country"}
@@ -49,7 +50,8 @@ const Users = (props) => {
 
    return (
       <div className={styles.wrapper}>
-         <div className={styles.head}>Users list:</div>
+         {props.users.length !== 0 ? null : <button onClick={getUsers}>Get Users</button>}
+         {props.users.length === 0 ? null : <div className={styles.head}>Users list:</div>}
          {userElements}
       </div>
    );
