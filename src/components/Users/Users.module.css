@@ -4,4 +4,63 @@
 
 .head {
     padding-bottom: 10px;
+    font-weight: 700;
+    color: #00476b;
+    font-size: 20px;
+}
+/* **************************** */
+.itemwrapper {
+   padding: 10px 0;
+   display: grid;
+   grid-template-areas: "avatar description follow";
+   grid-template-columns: 70px 1fr 70px;
+   grid-template-rows: 1fr;
+}
+
+.avatar {
+  grid-area: avatar;
+}
+.avatar img {
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 0 10px #394f77;
+}
+
+.description {
+   grid-area: description;
+   border-radius: 5px;
+   background-color: white;
+   padding: 5px;
+}
+
+.fullname {
+   font-weight: 800;
+}
+
+.status {
+   font-style: italic;
+}
+
+.location {
+   color: darkgray;
+}
+
+.follow {
+   grid-area: follow;
+   text-align: right;
+}
+
+.follow button {
+   width: 50px;
+   height: 50px;
+   line-height: 50px;
+   border: none;
+   border-radius: 7px;
+   font-weight: 800;
+   color: white;
+   text-decoration: none;
+   background: #00476b;
+   outline: none;
+   text-align: center;
+   font-size: large;
 }

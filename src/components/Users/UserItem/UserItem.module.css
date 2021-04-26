@@ -7,10 +7,12 @@
 }
 
 .avatar {
-    grid-area: avatar;
-    width: 50px;
-    height: 50px;
-    background-color: burlywood;
+   grid-area: avatar;
+}
+.avatar img {
+   width: 50px;
+   height: 50px;
+   box-shadow: 0 0 10px #394f77;
 }
 
 .description {
