@@ -4,7 +4,7 @@ import styles from './UserItem.module.css';
 
 export const followButton = (followed) => {
    if (followed) {
-      return (<button><i class="fa fa-star-o" aria-hidden="true"></i></button>)
+      return (<button><i class="fa fa-star" aria-hidden="true"></i></button>)
    }
    return (<button> <i class="fa fa-star-o" aria-hidden="true"></i></button>);
 }
@@ -31,7 +31,7 @@ const UserItem = (props) => {
             </div>
          </div>
          <div className={styles.follow}>
-            {followButton(props.followed)};
+            {followButton(props.followed)}
          </div>
       </div>
    );

@@ -1,15 +1,23 @@
 .header {
-   display: flex;
-   grid-area: h;
-   background-color: #0081c2;
-   text-align: left;
-   padding: 10px;
+    /* display: flex; */
+    grid-area: h;
+    display: grid;
+    grid-template-columns: 40px 1fr 100px 100px;
+    background-color: #0081c2;
+    text-align: left;
+    padding: 10px;
 }
 
 .title {
-   color: #7cd3ff;
-   font-weight: 200;
-   font-size: 25px;
-   line-height: 25px;
-   padding-left: 10px;
+    color: #7cd3ff;
+    font-weight: 200;
+    font-size: 25px;
+    line-height: 25px;
+    padding-left: 10px;
+}
+
+.login {
+    color: #7cd3ff;
+    font-size: 16px;
+    line-height: 30px;
 }
