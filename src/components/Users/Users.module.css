@@ -1,13 +1,14 @@
 .wrapper {
-    padding: 20px;
+   padding: 20px;
 }
 
 .head {
-    padding-bottom: 10px;
-    font-weight: 700;
-    color: #00476b;
-    font-size: 20px;
+   padding-bottom: 10px;
+   font-weight: 700;
+   color: #00476b;
+   font-size: 20px;
 }
+
 /* **************************** */
 .itemwrapper {
    padding: 10px 0;
@@ -18,12 +19,13 @@
 }
 
 .avatar {
-  grid-area: avatar;
+   grid-area: avatar;
 }
+
 .avatar img {
-  width: 50px;
-  height: 50px;
-  /* box-shadow: 0 0 10px #394f77;
+   width: 50px;
+   height: 50px;
+   /* box-shadow: 0 0 10px #394f77;
   border-radius: 50%; */
 }
 
@@ -67,6 +69,7 @@
    text-align: center;
    font-size: 30px;
 }
-.follow button i{
+
+.follow button i {
    color: #00476b;
 }
