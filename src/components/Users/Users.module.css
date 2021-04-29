@@ -1,5 +1,6 @@
 .wrapper {
    padding: 20px;
+   width: auto;
 }
 
 .head {
@@ -72,4 +73,28 @@
 
 .follow button i {
    color: #00476b;
+}
+
+
+.pagesList {
+   display: flex;
+   flex-wrap: wrap;
+   color: #00476b;
+   padding-bottom: 10px;
+   padding-left: 70px;
+}
+
+.pagesList span {
+   padding-left: 10px;
+   cursor: pointer;
+}
+
+.pagesList span:hover {
+   color: red;
+   font-weight: bold;
+}
+
+.selected {
+   color: #00476b;
+   font-weight: bold;
 }
