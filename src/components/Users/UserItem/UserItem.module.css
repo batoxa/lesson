@@ -42,7 +42,7 @@
 }
 
 .follow button {
-    margin: 10px 10px 0 0;
+    margin: 5px 20px 0 0;
     width: 35px;
     height: 35px;
     line-height: 32px;
@@ -57,4 +57,7 @@
 
 .follow button i {
     color: #00476b;
+}
+.follow button:hover i {
+    color: #d8b800;
 }

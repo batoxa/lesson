@@ -13,10 +13,10 @@ const UserItem = (props) => {
             {props.user.name}
          </div>
          <div className={styles.status}>
-            {props.user.status === null ? "user.status" : props.user.status}
+            {props.user.status === null ? "Скрытный тип" : props.user.status}
          </div>
          <div className={styles.location}>
-            {"user.location.city"}, {"user.location.country"}
+            {"Деревенск"}, {"Замкадия"}
          </div>
       </div>
       <div className={styles.follow}>

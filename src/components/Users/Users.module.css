@@ -1,62 +1,65 @@
 .wrapper {
-    padding: 20px;
-    width: auto;
+   padding: 20px;
+   width: auto;
+}
+
+.preloader {
+   padding: 0 0 10px 70px;
 }
 
 .head {
-    padding-bottom: 10px;
-    font-weight: 700;
-    color: #00476b;
-    font-size: 20px;
+   padding-bottom: 10px;
+   font-weight: 700;
+   color: #00476b;
+   font-size: 20px;
 }
 
 .pagesList {
-    display: flex;
-    flex-wrap: wrap;
-    color: #00476b;
-    padding-bottom: 10px;
-    padding-left: 70px;
+   display: flex;
+   flex-wrap: wrap;
+   color: #00476b;
+   padding-bottom: 10px;
+   padding-left: 70px;
 }
 
 .pagesList span {
-    padding-left: 10px;
-    cursor: pointer;
+   padding-left: 10px;
+   cursor: pointer;
 }
 
 .pagesList span:hover {
-    color: red;
-    font-weight: bold;
+   color: red;
+   font-weight: bold;
 }
 
 .selected {
-    color: #00476b;
-    font-weight: bold;
+   color: #00476b;
+   font-weight: bold;
 }
 
 button {
-    width: 130px;
-    height: 40px;
-    cursor: pointer;
-    border: none;
-    border-radius: 7px;
-    font-weight: 700;
-    color: white;
-    text-decoration: none;
-    padding: 10px 10px 10px;
-    background: #00476b;
-    /* outline: none; */
+   width: 130px;
+   height: 40px;
+   cursor: pointer;
+   border: none;
+   border-radius: 7px;
+   font-weight: 700;
+   color: white;
+   text-decoration: none;
+   padding: 10px 10px 10px;
+   background: #00476b;
 }
 
 button:hover {
-    color: gold;
+   color: gold;
 }
 
 .prevPageButton {
-    margin-top: 10px;
-    margin-left: 70px;
+   margin-top: 10px;
+   margin-left: 70px;
 }
 
 .nextPageButton {
-    margin-top: 10px;
-    margin-left: 20px;
+   margin-top: 10px;
+   margin-left: 20px;
 }
