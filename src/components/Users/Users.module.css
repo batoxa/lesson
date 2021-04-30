@@ -1,100 +1,62 @@
 .wrapper {
-   padding: 20px;
-   width: auto;
+    padding: 20px;
+    width: auto;
 }
 
 .head {
-   padding-bottom: 10px;
-   font-weight: 700;
-   color: #00476b;
-   font-size: 20px;
+    padding-bottom: 10px;
+    font-weight: 700;
+    color: #00476b;
+    font-size: 20px;
 }
-
-/* **************************** */
-.itemwrapper {
-   padding: 10px 0;
-   display: grid;
-   grid-template-areas: "avatar description follow";
-   grid-template-columns: 70px 1fr 70px;
-   grid-template-rows: 1fr;
-}
-
-.avatar {
-   grid-area: avatar;
-}
-
-.avatar img {
-   width: 50px;
-   height: 50px;
-   /* box-shadow: 0 0 10px #394f77;
-  border-radius: 50%; */
-}
-
-.description {
-   grid-area: description;
-   border-radius: 5px 0 0 5px;
-   background-color: white;
-   padding: 10px;
-}
-
-.fullname {
-   font-weight: 800;
-}
-
-.status {
-   font-style: italic;
-}
-
-.location {
-   color: darkgray;
-}
-
-.follow {
-   grid-area: follow;
-   text-align: right;
-   border-radius: 0 5px 5px 0;
-   background-color: white;
-
-}
-
-.follow button {
-   margin: 10px 10px 0 0;
-   width: 35px;
-   height: 35px;
-   line-height: 32px;
-   border: none;
-   font-weight: 800;
-   text-decoration: none;
-   background-color: #fff;
-   outline: none;
-   text-align: center;
-   font-size: 30px;
-}
-
-.follow button i {
-   color: #00476b;
-}
-
 
 .pagesList {
-   display: flex;
-   flex-wrap: wrap;
-   color: #00476b;
-   padding-bottom: 10px;
-   padding-left: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    color: #00476b;
+    padding-bottom: 10px;
+    padding-left: 70px;
 }
 
 .pagesList span {
-   padding-left: 10px;
-   cursor: pointer;
+    padding-left: 10px;
+    cursor: pointer;
 }
 
 .pagesList span:hover {
-   color: red;
-   font-weight: bold;
+    color: red;
+    font-weight: bold;
 }
 
 .selected {
-   color: #00476b;
-   font-weight: bold;
+    color: #00476b;
+    font-weight: bold;
+}
+
+button {
+    width: 130px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px 10px;
+    background: #00476b;
+    /* outline: none; */
+}
+
+button:hover {
+    color: gold;
+}
+
+.prevPageButton {
+    margin-top: 10px;
+    margin-left: 70px;
+}
+
+.nextPageButton {
+    margin-top: 10px;
+    margin-left: 20px;
 }

@@ -1,54 +1,59 @@
-import * as axios from 'axios';
 import React from 'react';
+import * as axios from 'axios';
 import styles from './Users.module.css';
-import userPhoto from '../../assets/images/user.png';
+import UserItem from './UserItem/UserItem';
 
-const Users = (props) => {
+class Users extends React.Component {
 
-   const getUsers = () => {
-      if (props.users.length === 0) {
-         axios.get("https://social-network.samuraijs.com/api/1.0/users")
+   componentDidMount() {
+      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.activePage}&count=${this.props.pageSize}`)
+         .then(response => {
+            this.props.setUsers(response.data.items)
+            this.props.setUsersTotalCount(response.data.totalCount)
+         })
+   }
+
+   componentDidUpdate(prevProps) {
+      if (this.props.activePage !== prevProps.activePage) {
+         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.activePage}&count=${this.props.pageSize}`)
             .then(response => {
-               props.setUsers(response.data.items)
+               this.props.setUsers(response.data.items)
             })
       }
    }
 
-   return (
-      <div className={styles.wrapper}>
-         {props.users.length !== 0 ? null : <button onClick={getUsers}>Get Users</button>}
-         {props.users.length === 0 ? null : <div className={styles.head}>Users list:</div>}
-         {props.users.map(user =>
-            <div className={styles.itemwrapper} key={user.id}>
-               <div className={styles.avatar}>
-                  <img src={user.photos.small != null ? user.photos.small : userPhoto} alt='avatar' />
-               </div>
-               <div className={styles.description}>
-                  <div className={styles.fullname}>
-                     {user.name}
-                  </div>
-                  <div className={styles.status}>
-                     {user.status === null ? "user.status" : user.status}
-                  </div>
-                  <div className={styles.location}>
-                     {"user.location.city"}, {"user.location.country"}
-                  </div>
-               </div>
-               <div className={styles.follow}>
-                  {user.followed
-                     ? <button onClick={() => props.unfollowUser(user.id)}>
-                        <i className="fa fa-star" aria-hidden="true" />
-                     </button>
+   // onPageChanged = (pageNumber) => {
+   //    this.props.setActivePage(pageNumber);
+   //    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
+   //       .then(response => {
+   //          this.props.setUsers(response.data.items)
+   //       })
+   // }
 
-                     : <button onClick={() => props.followUser(user.id)}>
-                        <i className="fa fa-star-o" aria-hidden="true" />
-                     </button>}
-               </div>
-            </div>
-         )
+   render() {
+      const pages = [];
+      if (this.props.activePage < 9) {
+         for (let i = 1; i <= 16; i++) {
+            pages.push(i);
          }
-      </div>
-   );
-}
+      } else {
+         for (let i = this.props.activePage - 8; i <= this.props.activePage + 8; i++) {
+            if (i <= (Math.ceil(this.props.totalUsersCount / this.props.pageSize))) {
+               pages.push(i)
+            };
+         }
+      }
 
+      return <div className={styles.wrapper}>
+         <div className={styles.head}>Users list:</div>
+         {this.props.users.map(user => <UserItem user={user} followUser={this.props.followUser} unfollowUser={this.props.unfollowUser} />)}
+         <div className={styles.pagesList}>Page:
+            {pages.map(pageNumber => { return < span className={this.props.activePage === pageNumber && styles.selected} onClick={() => { this.props.setActivePage(pageNumber) }}>{pageNumber}</span> })}
+            {/* {pages.map(pageNumber => { return < span className={this.props.activePage === pageNumber && styles.selected} onClick={() => { this.onPageChanged(pageNumber) }}>{pageNumber}</span> })} */}
+         </div>
+         <button className={styles.prevPageButton} onClick={() => { this.props.getPrevPage() }}>Previous Page</button>
+         <button className={styles.nextPageButton} onClick={() => { this.props.getNextPage() }}>Next Page</button>
+      </div >
+   }
+}
 export default Users;
