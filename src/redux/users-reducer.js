@@ -124,13 +124,13 @@ const usersReducer = (state = initialState, action) => {
    }
 };
 
-export const setUsersTotalCountActionCreator = (totalCount) => ({ type: SET_TOTAL_COUNT, totalCount });
-export const setActivePageActionCreator = (pageNumber) => ({ type: SET_ACTIVE_PAGE, pageNumber });
-export const setUsersActionCreator = (users) => ({ type: SET_USERS, users });
-export const followUserActionCreator = (userId) => ({ type: FOLLOW_USER, userId });
-export const unfollowUserActionCreator = (userId) => ({ type: UNFOLLOW_USER, userId });
-export const getNextPageActionCreator = () => ({ type: GET_NEXT_PAGE });
-export const getPrevPageActionCreator = () => ({ type: GET_PREV_PAGE });
-export const isFetchingActionCreator = (isLoading) => ({ type: IS_FETCHING, isLoading });
+export const setUsersTotalCount = (totalCount) => ({ type: SET_TOTAL_COUNT, totalCount });
+export const setActivePage = (pageNumber) => ({ type: SET_ACTIVE_PAGE, pageNumber });
+export const setUsers = (users) => ({ type: SET_USERS, users });
+export const followUser = (userId) => ({ type: FOLLOW_USER, userId });
+export const unfollowUser = (userId) => ({ type: UNFOLLOW_USER, userId });
+export const getNextPage = () => ({ type: GET_NEXT_PAGE });
+export const getPrevPage = () => ({ type: GET_PREV_PAGE });
+export const isFetching = (isLoading) => ({ type: IS_FETCHING, isLoading });
 
 export default usersReducer;

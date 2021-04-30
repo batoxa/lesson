@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setUsersActionCreator, followUserActionCreator, unfollowUserActionCreator, setUsersTotalCountActionCreator, setActivePageActionCreator,getNextPageActionCreator,getPrevPageActionCreator, isFetchingActionCreator } from '../../redux/users-reducer';
+import { setUsers, followUser, unfollowUser, setUsersTotalCount, setActivePage, getNextPage, getPrevPage, isFetching } from '../../redux/users-reducer';
 import Users from './Users';
 
 
@@ -13,37 +13,18 @@ let mapStateToProps = (state) => {
    }
 }
 
-let mapDispatchToProps = (dispatch) => {
-   return {
-
-
-      isFetching: (isLoading) => {
-         dispatch(isFetchingActionCreator(isLoading));
-      },
-      getPrevPage: () => {
-         dispatch(getPrevPageActionCreator());
-      },
-      getNextPage: () => {
-         dispatch(getNextPageActionCreator());
-      },
-      setUsersTotalCount: (totalCount) => {
-         dispatch(setUsersTotalCountActionCreator(totalCount));
-      },
-      setActivePage: (pageNumber) => {
-         dispatch(setActivePageActionCreator(pageNumber));
-      },
-      setUsers: (users) => {
-         dispatch(setUsersActionCreator(users));
-      },
-      followUser: (userId) => {
-         dispatch(followUserActionCreator(userId));
-      },
-      unfollowUser: (userId) => {
-         dispatch(unfollowUserActionCreator(userId));
-      }
-   }
-}
-
-const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(Users);
+const UsersContainer = connect(mapStateToProps, {
+   isFetching,
+   getPrevPage,
+   getNextPage,
+   setUsersTotalCount,
+   setActivePage,
+   setUsers,
+   followUser,
+   unfollowUser
+})
+   (Users);
 
 export default UsersContainer;
+
+
