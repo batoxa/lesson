@@ -2,7 +2,7 @@ import React from 'react';
 import * as axios from 'axios';
 import styles from './Users.module.css';
 import UserItem from './UserItem/UserItem';
-import Preloader from '../Preloader/Preloader';
+import UserItemPreloader from './UserItemPreloader/UserItemPreloader';
 
 class Users extends React.Component {
 
@@ -41,10 +41,12 @@ class Users extends React.Component {
             };
          }
       }
+      const preloadView = this.props.users.map(user => <UserItemPreloader/>);
+      
       return <div className={styles.wrapper}>
          <div className={styles.head}>Users list: </div>
          {this.props.isLoading
-            ? <div className={styles.preloader}><Preloader /></div>
+            ? <div className={styles.preloader}>{preloadView}</div>
             : this.props.users.map(user => <UserItem user={user} followUser={this.props.followUser} unfollowUser={this.props.unfollowUser} />)}
          <div className={styles.pagesList}>Page:
             {pages.map(pageNumber => { return < span className={this.props.activePage === pageNumber && styles.selected} onClick={() => { this.props.setActivePage(pageNumber) }}>{pageNumber}</span> })}
