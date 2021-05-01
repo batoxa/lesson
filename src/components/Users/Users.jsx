@@ -33,7 +33,7 @@ class Users extends React.Component {
 
    render() {
       const pages = [];
-      if (this.props.activePage < 9) {
+      if (this.props.activePage < 9 ) {
          for (let i = 1; i <= 16; i++) {
             pages.push(i);
          }
