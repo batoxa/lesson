@@ -1,8 +1,13 @@
 .content {
    grid-area: c;
-   /* background-color: #c8dae4; */
    background-color: #e2e1e3;
+}
 
+.head {
+   height: 130px;
+   background-image: url(https://fartuk.ru/upload/resize_cache/iblock/55b/1920_383_1d2c0be91f8b91a0d3c91a9448f348e3c/skinali_vodoemy_plyazh_215280.jpg);
+   background-size: cover;
+   background-position: bottom;
 }
 
 .posts {

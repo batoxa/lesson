@@ -41,8 +41,11 @@ class Users extends React.Component {
             };
          }
       }
-      const preloadView = this.props.users.map(user => <UserItemPreloader/>);
-      
+      const preloadView = [];
+      for (let i = 1; i <= this.props.pageSize; i++) {
+         preloadView.push(<UserItemPreloader />);
+      };
+
       return <div className={styles.wrapper}>
          <div className={styles.head}>Users list: </div>
          {this.props.isLoading

@@ -1,25 +1,19 @@
 .itemwrapper {
     padding: 10px 0;
     display: grid;
-    grid-template-areas: "avatar description follow";
     grid-template-columns: 70px 1fr 70px;
-    grid-template-rows: 1fr;
 }
 
 .avatar {
-    grid-area: avatar;
-}
-
-.avatar img {
     width: 50px;
     height: 50px;
 }
 
 .description {
-    grid-area: description;
     border-radius: 5px 0 0 5px;
     background-color: white;
     padding: 10px;
+    min-height: 65px;
 }
 
 .fullname {
@@ -35,7 +29,6 @@
 }
 
 .follow {
-    grid-area: follow;
     text-align: right;
     border-radius: 0 5px 5px 0;
     background-color: white;

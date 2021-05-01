@@ -1,5 +1,6 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SET_USER_PROFILE = 'SET-USER-PROFILE';
 
 let initialState = {
    postData: [
@@ -7,16 +8,17 @@ let initialState = {
       { id: 2, message: "Ok", likecounts: 3 },
       { id: 3, message: "Yoooo, nice!", likecounts: 7 }
    ],
-   userData: [
-      { id: 1, name: "Batoxa", avatar: "https://st3.depositphotos.com/3687485/13283/v/950/depositphotos_132834058-stock-illustration-bread-vector-illustration.jpg" }
-   ],
+   userData: {},
    newPostText: ""
 };
 
 const profileReducer = (state = initialState, action) => {
-
    switch (action.type) {
-      case ADD_POST:{
+
+      case SET_USER_PROFILE: 
+         return { ...state, userData: action.userData };
+
+      case ADD_POST: {
          let newPost = {
             id: state.postData.length + 1,
             message: state.newPostText,
@@ -26,18 +28,21 @@ const profileReducer = (state = initialState, action) => {
          stateCopy.postData = [...state.postData];
          stateCopy.postData.push(newPost);
          stateCopy.newPostText = '';
-         return stateCopy;}
+         return stateCopy;
+      };
 
-      case UPDATE_NEW_POST_TEXT:{
+      case UPDATE_NEW_POST_TEXT: {
          let stateCopy = { ...state };
          stateCopy.newPostText = action.newText;
-         return stateCopy;}
+         return stateCopy;
+      };
 
       default:
          return state;
    }
 }
 
+export const setUserProfile = (userData) => ({ type: SET_USER_PROFILE, userData: userData });
 export const addPostActionCreater = () => ({ type: ADD_POST });
 export const updateNewPostActionCreater = (text) => ({ type: UPDATE_NEW_POST_TEXT, newText: text });
 
