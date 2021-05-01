@@ -8,7 +8,7 @@ import Profile from './Profile';
 class ProfileContainer extends React.Component {
 
    componentDidMount() {
-      axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${this.props.match.params.userId ? this.props.match.params.userId : 2}`)
+      axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${this.props.match.params.userId ? this.props.match.params.userId : 16856}`)
          .then(response => {
             this.props.setUserProfile(response.data)
          })
