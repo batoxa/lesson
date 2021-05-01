@@ -5,7 +5,8 @@ import Preloader from '../../Preloader/Preloader';
 
 
 const ProfileInfo = (props) => {
-   if (props.user.userId) {
+   // if (props.user?.userId) {
+   if (props.user && props.user.userId) {
       return (
          <div className={styles.wrapper}>
             <div className={styles.head}>
