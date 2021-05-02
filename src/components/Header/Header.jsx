@@ -10,11 +10,7 @@ const Header = (props) => {
 
          <div className={styles.login}>
             {props.isAuth ? <div><i className="fa fa-user" aria-hidden="true" />&nbsp;{props.login}</div> : <NavLink className={styles.link} to={'/login'}><i className="fa fa-user" aria-hidden="true" />&nbsp;Sign In </NavLink>}
-            {/* {props.isAuth ? <i className="fa fa-user" aria-hidden="true" />props.login : <NavLink className={styles.link} to={'/login'}><i className="fa fa-user" aria-hidden="true" /> Sign In </NavLink>} */}
          </div>
-         {/* <div className={styles.login}>
-            <i className="fa fa-user-plus" aria-hidden="true" /> Sign Up
-         </div> */}
       </header>
    );
 }

@@ -1,19 +1,17 @@
 import React from 'react';
-import * as axios from 'axios';
 import styles from './Users.module.css';
 import UserItem from './UserItem/UserItem';
 import UserItemPreloader from './UserItemPreloader/UserItemPreloader';
+import { userAPI } from '../api/api';
 
 class Users extends React.Component {
 
    componentDidMount() {
       this.props.isFetching(true);
-      axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.activePage}&count=${this.props.pageSize}`, {
-         withCredentials: true
-      })
-         .then(response => {
-            this.props.setUsers(response.data.items)
-            this.props.setUsersTotalCount(response.data.totalCount)
+      userAPI.getUsers(this.props.activePage, this.props.pageSize)
+         .then(data => {
+            this.props.setUsers(data.items)
+            this.props.setUsersTotalCount(data.totalCount)
             this.props.isFetching(false);
          })
    }
@@ -21,11 +19,9 @@ class Users extends React.Component {
    componentDidUpdate(prevProps) {
       if (this.props.activePage !== prevProps.activePage) {
          this.props.isFetching(true);
-         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.activePage}&count=${this.props.pageSize}`, {
-            withCredentials: true
-         })
-            .then(response => {
-               this.props.setUsers(response.data.items)
+         userAPI.getUsers(this.props.activePage, this.props.pageSize)
+            .then(data => {
+               this.props.setUsers(data.items)
                this.props.isFetching(false);
             })
       }
@@ -33,7 +29,7 @@ class Users extends React.Component {
 
    render() {
       const pages = [];
-      if (this.props.activePage < 9 ) {
+      if (this.props.activePage < 9) {
          for (let i = 1; i <= 16; i++) {
             pages.push(i);
          }
@@ -46,7 +42,7 @@ class Users extends React.Component {
       }
       const preloadView = [];
       for (let i = 1; i <= this.props.pageSize; i++) {
-         preloadView.push(<UserItemPreloader key={i}/>);
+         preloadView.push(<UserItemPreloader key={i} />);
       };
       return <div className={styles.wrapper}>
          <div className={styles.head}>Users list: </div>
