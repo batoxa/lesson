@@ -24,21 +24,25 @@ const UserItem = (props) => {
          </div>
          <div className={styles.follow}>
             {props.user.followed
-               ? <button onClick={() => {
+               ? <button disabled={props.isFollow.some(id => id === props.user.id)} onClick={() => {
+                  props.toggleIsFollow(true, props.user.id);
                   userAPI.setUnfollow(props.user.id)
                      .then(data => {
                         if (data.resultCode === 0) {
                            props.unfollowUser(props.user.id)
                         }
+                        props.toggleIsFollow(false, props.user.id);
                      });
                }}><i className="fa fa-star" aria-hidden="true" />
                </button>
-               : <button onClick={() => {
+               : <button disabled={props.isFollow.some(id => id === props.user.id)} onClick={() => {
+                  props.toggleIsFollow(true, props.user.id);
                   userAPI.setFollow(props.user.id)
                      .then(data => {
                         if (data.resultCode === 0) {
                            props.followUser(props.user.id)
                         }
+                        props.toggleIsFollow(false, props.user.id);
                      });
                }}><i className="fa fa-star-o" aria-hidden="true" />
                </button>

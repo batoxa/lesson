@@ -42,13 +42,14 @@ class Users extends React.Component {
       }
       const preloadView = [];
       for (let i = 1; i <= this.props.pageSize; i++) {
-         preloadView.push(<UserItemPreloader key={i} />);
+         preloadView.push(<UserItemPreloader key={i}
+         />);
       };
       return <div className={styles.wrapper}>
          <div className={styles.head}>Users list: </div>
          {this.props.isLoading
             ? <div className={styles.preloader}>{preloadView}</div>
-            : this.props.users.map(user => <UserItem key={user.id} user={user} followUser={this.props.followUser} unfollowUser={this.props.unfollowUser} />)}
+            : this.props.users.map(user => <UserItem key={user.id} user={user} followUser={this.props.followUser} unfollowUser={this.props.unfollowUser} isFollow={this.props.isFollow} toggleIsFollow={this.props.toggleIsFollow} />)}
          <div className={styles.pagesList}>Page:
             {pages.map(pageNumber => {
             if (this.props.activePage === pageNumber) {

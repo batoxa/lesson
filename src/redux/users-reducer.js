@@ -6,6 +6,7 @@ const SET_TOTAL_COUNT = 'SET-TOTAL-COUNT';
 const GET_NEXT_PAGE = 'GET-NEXT-PAGE';
 const GET_PREV_PAGE = 'GET-PREV-PAGE';
 const IS_FETCHING = 'IS-FETCHING';
+const TOGGLE_IS_FOLLOW = 'TOGGLE-IS-FOLLOW';
 
 
 const initialState = {
@@ -13,12 +14,21 @@ const initialState = {
    pageSize: 5,
    totalUsersCount: 0,
    activePage: 1,
-   isLoading: false
+   isLoading: false,
+   isFollow: []
 }
 
 const usersReducer = (state = initialState, action) => {
 
    switch (action.type) {
+
+      case TOGGLE_IS_FOLLOW:
+         return {
+            ...state,
+            isFollow: action.isFollow
+               ? [...state.isFollow, action.userId]
+               : [...state.isFollow.filter(id => id !== action.userId)]
+         };
 
       case IS_FETCHING:
          return {
@@ -101,5 +111,6 @@ export const unfollowUser = (userId) => ({ type: UNFOLLOW_USER, userId });
 export const getNextPage = () => ({ type: GET_NEXT_PAGE });
 export const getPrevPage = () => ({ type: GET_PREV_PAGE });
 export const isFetching = (isLoading) => ({ type: IS_FETCHING, isLoading });
+export const toggleIsFollow = (isFollow, userId) => ({ type: TOGGLE_IS_FOLLOW, isFollow, userId });
 
 export default usersReducer;
