@@ -1,3 +1,6 @@
+import { userAPI } from '../components/api/api';
+
+
 const SET_USERS = 'SET-USERS';
 const FOLLOW_USER = 'FOLLOW-USER';
 const UNFOLLOW_USER = 'UNFOLLOW-USER';
@@ -112,5 +115,43 @@ export const getNextPage = () => ({ type: GET_NEXT_PAGE });
 export const getPrevPage = () => ({ type: GET_PREV_PAGE });
 export const isFetching = (isLoading) => ({ type: IS_FETCHING, isLoading });
 export const toggleIsFollow = (isFollow, userId) => ({ type: TOGGLE_IS_FOLLOW, isFollow, userId });
+
+export const getUsers = (activePage, pageSize) => {
+   return (dispatch) => {
+      dispatch(isFetching(true));
+      userAPI.getUsers(activePage, pageSize)
+         .then(data => {
+            dispatch(setUsers(data.items));
+            dispatch(isFetching(false));
+            dispatch(setUsersTotalCount(data.totalCount));
+         })
+   }
+}
+
+export const unfollow = (userId) => {
+   return (dispatch) => {
+      dispatch(toggleIsFollow(true, userId));
+      userAPI.setUnfollow(userId)
+         .then(data => {
+            if (data.resultCode === 0) {
+               dispatch(unfollowUser(userId))
+            };
+            dispatch(toggleIsFollow(false, userId));
+         });
+   }
+}
+
+export const follow = (userId) => {
+   return (dispatch) => {
+      dispatch(toggleIsFollow(true, userId));
+      userAPI.setFollow(userId)
+         .then(data => {
+            if (data.resultCode === 0) {
+               dispatch(followUser(userId))
+            };
+            dispatch(toggleIsFollow(false, userId));
+         });
+   }
+}
 
 export default usersReducer;

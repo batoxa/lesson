@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setUsers, followUser, unfollowUser, setUsersTotalCount, setActivePage, getNextPage, getPrevPage, isFetching, toggleIsFollow } from '../../redux/users-reducer';
+import { setActivePage, getNextPage, getPrevPage, getUsers, unfollow, follow } from '../../redux/users-reducer';
 import Users from './Users';
 
 
@@ -15,15 +15,12 @@ let mapStateToProps = (state) => {
 }
 
 const UsersContainer = connect(mapStateToProps, {
-   isFetching,
    getPrevPage,
    getNextPage,
-   setUsersTotalCount,
    setActivePage,
-   setUsers,
-   followUser,
-   unfollowUser,
-   toggleIsFollow
+   getUsers,
+   unfollow,
+   follow
 })
    (Users);
 
