@@ -9,7 +9,7 @@ const Header = (props) => {
          <div className={styles.title}>My social network for learn react js</div>
 
          <div className={styles.login}>
-            {props.isAuth ? <div><i className="fa fa-user" aria-hidden="true" />&nbsp;{props.login}</div> : <NavLink className={styles.link} to={'/login'}><i className="fa fa-user" aria-hidden="true" />&nbsp;Sign In </NavLink>}
+            {props.isAuth ? <div className={styles.isauth}><i className="fa fa-user" aria-hidden="true" />&nbsp;{props.login}</div> : <NavLink className={styles.link} to={'/login'}><i className="fa fa-user" aria-hidden="true" />&nbsp;Sign In </NavLink>}
          </div>
       </header>
    );

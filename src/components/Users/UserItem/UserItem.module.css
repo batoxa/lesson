@@ -51,6 +51,11 @@
 .follow button i {
     color: #00476b;
 }
+
 .follow button:hover i {
     color: #d8b800;
+}
+
+.follow button:disabled i {
+    color: #ff0000;
 }
