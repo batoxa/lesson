@@ -10,22 +10,14 @@ const UserItem = (props) => {
                 <NavLink to={"/profile/" + props.user.id}>
                     <img
                         className={styles.avatar}
-                        src={
-                            props.user.photos.small != null
-                                ? props.user.photos.small
-                                : userPhoto
-                        }
-                        alt="avatar"
+                        src={props.user.photos.small != null ? props.user.photos.small : userPhoto}
+                        alt='avatar'
                     />
                 </NavLink>
             </div>
             <div className={styles.description}>
                 <div className={styles.fullname}>{props.user.name}</div>
-                <div className={styles.status}>
-                    {props.user.status === null
-                        ? "Скрытный тип"
-                        : props.user.status}
-                </div>
+                <div className={styles.status}>{props.user.status === null ? "Скрытный тип" : props.user.status}</div>
                 <div className={styles.location}>
                     {"Деревенск"}, {"Замкадия"}
                 </div>
@@ -33,25 +25,21 @@ const UserItem = (props) => {
             <div className={styles.follow}>
                 {props.user.followed ? (
                     <button
-                        disabled={props.isFollow.some(
-                            (id) => id === props.user.id
-                        )}
+                        disabled={props.isFollow.some((id) => id === props.user.id)}
                         onClick={() => {
                             props.unfollow(props.user.id);
                         }}
                     >
-                        <i className="fa fa-star" aria-hidden="true" />
+                        <i className='fa fa-star' aria-hidden='true' />
                     </button>
                 ) : (
                     <button
-                        disabled={props.isFollow.some(
-                            (id) => id === props.user.id
-                        )}
+                        disabled={props.isFollow.some((id) => id === props.user.id)}
                         onClick={() => {
                             props.follow(props.user.id);
                         }}
                     >
-                        <i className="fa fa-star-o" aria-hidden="true" />
+                        <i className='fa fa-star-o' aria-hidden='true' />
                     </button>
                 )}
             </div>
