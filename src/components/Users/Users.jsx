@@ -46,12 +46,12 @@ class Users extends React.Component {
                />)}
          <div className={styles.pagesList}>Page:
             {pages.map(pageNumber => (
-            <span
+            <button
                key={pageNumber}
-               className={classNames({ [styles.selected]: this.props.activePage === pageNumber })}
+               className={classNames( [styles.pageNumberButton], {[styles.selected]: this.props.activePage === pageNumber })}
                onClick={() => { this.props.setActivePage(pageNumber) }}
             >{pageNumber}
-            </span>
+            </button>
          )
          )}
          </div>

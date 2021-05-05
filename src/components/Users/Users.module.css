@@ -1,64 +1,82 @@
 .wrapper {
-   padding: 20px;
-   width: auto;
+    padding: 20px;
+    width: auto;
 }
 
 .preloader {
-   padding: 0;
+    padding: 0;
 }
 
 .head {
-   padding-bottom: 10px;
-   font-weight: 700;
-   color: #00476b;
-   font-size: 20px;
+    padding-bottom: 10px;
+    font-weight: 700;
+    color: #00476b;
+    font-size: 20px;
 }
 
 .pagesList {
-   display: flex;
-   flex-wrap: wrap;
-   color: #00476b;
-   padding-bottom: 10px;
-   padding-left: 70px;
-}
-
-.pagesList span {
-   padding-left: 10px;
-   cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    color: #00476b;
+    padding-bottom: 10px;
+    padding-left: 70px;
 }
 
 .pagesList span:hover {
-   color: red;
+    color: red;
+}
+
+.pageNumberButton {
+    padding-left: 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #00476b;
+    background-color: #e2e1e3;
+    font-size: 16px;
 }
 
 .selected {
-   color: #00476b;
-   font-weight: bold;
-}
-
-button {
-   width: 130px;
-   height: 40px;
-   cursor: pointer;
-   border: none;
-   border-radius: 7px;
-   font-weight: 700;
-   color: white;
-   text-decoration: none;
-   padding: 10px 10px 10px;
-   background: #00476b;
-}
-
-button:hover {
-   color: gold;
+    color: #00476b;
+    font-weight: bold;
 }
 
 .prevPageButton {
-   margin-top: 10px;
-   margin-left: 70px;
+    width: 130px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px 10px;
+    background: #00476b;
 }
 
 .nextPageButton {
-   margin-top: 10px;
-   margin-left: 20px;
+    width: 130px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px 10px;
+    background: #00476b;
+}
+
+button:hover {
+    color: gold;
+}
+
+.prevPageButton {
+    margin-top: 10px;
+    margin-left: 70px;
+}
+
+.nextPageButton {
+    margin-top: 10px;
+    margin-left: 20px;
 }
