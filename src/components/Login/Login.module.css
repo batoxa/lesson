@@ -1,4 +1,8 @@
-.wrapper{
-   padding: 20px;
+.wrapper {
+    display: flex;
+    padding: 20px;
 }
-
+.text{
+    line-height: 50px;
+    padding-left: 10px;
+}
