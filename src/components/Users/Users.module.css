@@ -22,8 +22,8 @@
     padding-left: 70px;
 }
 
-.pagesList span:hover {
-    color: red;
+.pagesList>button:hover {
+    color: #ff0000;
 }
 
 .pageNumberButton {
@@ -42,7 +42,8 @@
 }
 
 .prevPageButton {
-    width: 130px;
+    position: relative;
+    width: 120px;
     height: 40px;
     cursor: pointer;
     border: none;
@@ -52,31 +53,78 @@
     text-decoration: none;
     padding: 10px 10px 10px;
     background: #00476b;
-}
-
-.nextPageButton {
-    width: 130px;
-    height: 40px;
-    cursor: pointer;
-    border: none;
-    border-radius: 7px;
-    font-weight: 700;
-    color: white;
-    text-decoration: none;
-    padding: 10px 10px 10px;
-    background: #00476b;
-}
-
-button:hover {
-    color: gold;
-}
-
-.prevPageButton {
+    transition: 0.7s;
+    overflow: hidden;
     margin-top: 10px;
     margin-left: 70px;
 }
 
 .nextPageButton {
+    position: relative;
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 7px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px 10px;
+    background: #00476b;
+    transition: 0.7s;
+    overflow: hidden;
     margin-top: 10px;
     margin-left: 20px;
+}
+
+.prevPageButton::after {
+    content: '<';
+    position: absolute;
+    left: -30px;
+    top: 0;
+    width: 30px;
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: 800;
+    height: 40px;
+    border: none;
+    border-radius: 7px 0 0 7px;
+    background-color: #cf7200;
+    transition: 0.7s;
+}
+
+.nextPageButton::after {
+    content: '>';
+    position: absolute;
+    right: -30px;
+    top: 0;
+    width: 30px;
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: 800;
+    height: 40px;
+    border: none;
+    border-radius: 0 7px 7px 0;
+    background-color: #cf7200;
+    transition: 0.7s;
+}
+
+.nextPageButton:hover {
+    position: relative;
+    background-color: darkorange;
+    padding-right: 40px;
+}
+
+.prevPageButton:hover {
+    position: relative;
+    background-color: darkorange;
+    padding-left: 40px;
+}
+
+.nextPageButton:hover:after {
+    right: 0;
+}
+
+.prevPageButton:hover:after {
+    left: 0;
 }

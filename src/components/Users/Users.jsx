@@ -73,10 +73,10 @@ class Users extends React.Component {
                     ))}
                 </div>
                 <button className={styles.prevPageButton} onClick={getPrevPage}>
-                    Previous Page
+                    Previous
                 </button>
                 <button className={styles.nextPageButton} onClick={getNextPage}>
-                    Next Page
+                    Next
                 </button>
             </div>
         );
