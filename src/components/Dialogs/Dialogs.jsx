@@ -5,10 +5,10 @@ import styles from "./Dialogs.module.css";
 
 const Dialogs = (props) => {
     const dialogsElements = props.dialogsPage.dialogsData.map((dialog) => (
-        <DialogItem name={dialog.name} id={dialog.id} avatar={dialog.avatar} />
+        <DialogItem name={dialog.name} id={dialog.id} avatar={dialog.avatar} key={dialog.id} />
     ));
     const messagesElements = props.dialogsPage.messagesData.map((message) => (
-        <Message message={message.message} id={message.id} newMessageText={props.newMessageText} />
+        <Message message={message.message} id={message.id} newMessageText={props.newMessageText} key={message.id}/>
     ));
 
     const onMessageChange = (event) => {
