@@ -6,7 +6,7 @@ import sidebarReducer from "./sidebar-reducer";
 import usersReducer from "./users-reducer";
 import thunkMiddleware from "redux-thunk";
 
-let reducers = combineReducers({
+const reducers = combineReducers({
 
    profilePage: profileReducer,
    dialogsPage: dialogsReducer,
@@ -16,7 +16,7 @@ let reducers = combineReducers({
 
 });
 
-let store = createStore(reducers, applyMiddleware(thunkMiddleware));
+const store = createStore(reducers, applyMiddleware(thunkMiddleware));
 window.store = store;
 
 export default store;

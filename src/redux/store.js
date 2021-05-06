@@ -2,7 +2,7 @@ import dialogsReducer from "./dialogs-reducer";
 import profileReducer from "./profile-reducer";
 import sidebarReducer from "./sidebar-reducer";
 
-let store = {
+const store = {
    _state: {
       sideBar: {
          friendData: [

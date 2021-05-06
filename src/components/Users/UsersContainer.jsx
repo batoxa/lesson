@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { setActivePage, getNextPage, getPrevPage, getUsers, unfollow, follow } from "../../redux/users-reducer";
 import Users from "./Users";
 
-let mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
     return {
         users: state.usersPage.users,
         pageSize: state.usersPage.pageSize,

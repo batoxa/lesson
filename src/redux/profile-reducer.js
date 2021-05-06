@@ -5,7 +5,7 @@ const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
 
-let initialState = {
+const initialState = {
     postData: [
         { id: 1, message: "Hi, how are you?", likecounts: 5 },
         { id: 2, message: "Ok", likecounts: 3 },

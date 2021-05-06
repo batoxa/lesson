@@ -1,7 +1,7 @@
 const ADD_MESSAGE = 'ADD-MESSAGE';
 const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
-let initialState = {
+const initialState = {
    messagesData: [
       { id: 1, message: "Hi" },
       { id: 2, message: "Hello" },
