@@ -1,0 +1,16 @@
+.statusView {
+    font-weight: 400;
+    font-size: 18px;
+    color: #00476b;
+}
+
+.statusInput {
+    font-weight: 400;
+    font-size: 18px;
+    color: #00476ba4;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #d8e2e4;
+    width: 100%;
+}

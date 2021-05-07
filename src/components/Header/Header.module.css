@@ -1,8 +1,7 @@
 .header {
-    /* display: flex; */
     grid-area: h;
     display: grid;
-    grid-template-columns: 40px 1fr 100px;
+    grid-template-columns: 200px 40px 1fr;
     background-color: #0081c2;
     text-align: left;
     padding: 10px;
@@ -20,6 +19,7 @@
     color: #7cd3ff;
     font-size: 16px;
     line-height: 30px;
+    padding-left: 20px;
 }
 
 .isauth {
@@ -29,4 +29,8 @@
 .link {
     color: #7cd3ff;
     text-decoration: none;
+}
+
+.link:hover {
+    color: gold;
 }

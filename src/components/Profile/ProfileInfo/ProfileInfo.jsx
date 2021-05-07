@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./ProfileInfo.module.css";
 import userPhoto from "../../../assets/images/user.png";
 import Preloader from "../../Preloader/Preloader";
+import ProfileStatus from "../ProfileStatus/ProfileStatus";
 
 const ProfileInfo = (props) => {
     // if (props.user?.userId) {
@@ -18,7 +19,7 @@ const ProfileInfo = (props) => {
                     </div>
                     <div className={styles.userData}>
                         <div className={styles.userName}>{props.user.fullName}</div>
-                        <div>{props.user.aboutMe}</div>
+                        <ProfileStatus aboutMe={props.user.aboutMe}/>
                         <div className={styles.job}>
                             {`${props.user.lookingForAJob ? "I seek job" : "I'm working"}
                             ${props.user.lookingForAJobDescription != null ? " - " : ""}

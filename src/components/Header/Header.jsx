@@ -5,11 +5,6 @@ import styles from "./Header.module.css";
 const Header = (props) => {
     return (
         <header className={styles.header}>
-            <img src="../../../logo512.png" height="30px" alt="logo"></img>
-            <div className={styles.title}>
-                My social network for learn react js
-            </div>
-
             <div className={styles.login}>
                 {props.isAuth ? (
                     <div className={styles.isauth}>
@@ -17,11 +12,20 @@ const Header = (props) => {
                         &nbsp;{props.login}
                     </div>
                 ) : (
-                    <NavLink className={styles.link} to={"/login"}>
-                        <i className="fa fa-user" aria-hidden="true" />
-                        &nbsp;Sign In{" "}
-                    </NavLink>
+                    <a className={styles.link} href="https://social-network.samuraijs.com/api/1.0/" target="_blank" rel="noreferrer">
+                        <i className="fa fa-user" aria-hidden="true" />&nbsp;Sign In
+                    </a>
+
+                    // <NavLink className={styles.link} to={"/login"}>
+                    //     <i className="fa fa-user" aria-hidden="true" />
+                    //     &nbsp;Sign In{" "}
+                    // </NavLink>
                 )}
+            </div>
+            <NavLink to={"/"}>
+                <img src="../../../logo512.png" height="30px" alt="logo"></img> </NavLink>
+            <div className={styles.title}>
+                My social network for learn react js
             </div>
         </header>
     );
