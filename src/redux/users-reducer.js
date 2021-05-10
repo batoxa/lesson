@@ -14,7 +14,7 @@ const initialState = {
     users: [],
     pageSize: 5,
     totalUsersCount: 0,
-    activePage: 1,
+    activePage: 2412,
     isLoading: false,
     isFollow: [],
 };

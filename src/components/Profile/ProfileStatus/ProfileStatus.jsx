@@ -1,31 +1,49 @@
 import React from "react";
 import styles from "./ProfileStatus.module.css";
 
-
 class ProfileStatus extends React.Component {
     state = {
-        editMode: false
-    }
-    activateEditMode() {
+        editMode: false,
+    };
+    activateEditMode = () => {
         this.setState({
-            editMode: true
-        })
-    }
-    deactivateEditMode() {
+            editMode: true,
+            status: this.props.status,
+        });
+    };
+
+    onStatusChange = (event) => {
         this.setState({
-            editMode: false
-        })
-    }
+            status: event.target.value,
+        });
+    };
+
+    deactivateEditMode = () => {
+        this.setState({
+            editMode: false,
+        });
+        this.props.updateUserStatus(this.state.status);
+    };
     render() {
         return (
-            <div> {
-                !this.state.editMode
-                    ? <div className={styles.statusView} onDoubleClick={this.activateEditMode.bind(this)}>{this.props.aboutMe}</div>
-                    : <input className={styles.statusInput} onBlur={this.deactivateEditMode.bind(this)} value={this.props.aboutMe} autoFocus={true}/>
-            }
+            <div>
+                {" "}
+                {!this.state.editMode ? (
+                    <div className={styles.statusView} onDoubleClick={this.activateEditMode}>
+                        Status: {this.props.status || ' - - - - -'}
+                    </div>
+                ) : (
+                    <input
+                        className={styles.statusInput}
+                        onChange={this.onStatusChange}
+                        onBlur={this.deactivateEditMode}
+                        value={this.state.status}
+                        autoFocus={true}
+                    />
+                )}
             </div>
-        )
+        );
     }
-};
+}
 
 export default ProfileStatus;
