@@ -1,8 +1,10 @@
 .wrapper {
-    display: flex;
     padding: 20px;
 }
-.text{
+
+.text {
     line-height: 50px;
-    padding-left: 10px;
+    color: #00476b;
+    margin: 0;
+    padding-bottom: 20px;
 }

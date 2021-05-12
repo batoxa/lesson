@@ -4,7 +4,7 @@
 
 .MyPosts h1 {
     color: #00476b;
-    margin: 0 0 10px 0 ;
+    margin: 0 0 10px 0;
 }
 
 .NewPost textarea {
@@ -15,11 +15,10 @@
     border: none;
     border-radius: 5px;
     outline: none;
-
 }
 
 .NewPost {
-   background-color: #c7c7c7;
+    background-color: #c7c7c7;
     padding: 10px;
     border-radius: 5px;
 }
@@ -33,7 +32,6 @@
     padding: 10px 10px 10px;
     background: #00476b;
     outline: none;
-
 }
 
 .Post {

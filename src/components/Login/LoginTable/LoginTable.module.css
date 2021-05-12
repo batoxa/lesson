@@ -1,0 +1,43 @@
+.table {
+    width: 200px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+}
+
+.input::placeholder {
+    color: #00476b70;
+}
+
+.input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #00476b;
+    outline: none;
+    color: #00476b;
+}
+
+.button {
+    border: none;
+    border-radius: 7px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px 10px;
+    background: #00476b;
+    outline: none;
+    transition: 0.7s;
+}
+
+.button:hover {
+    background: darkorange;
+}
+
+.checkbox {
+    color: #00476b;
+}
+
+.checkbox input {
+    margin-right: 10px;
+    border: 1px solid #00476b;
+}

@@ -7,10 +7,10 @@ const Header = (props) => {
         <header className={styles.header}>
             <div className={styles.login}>
                 {props.isAuth ? (
-                    <div className={styles.isauth}>
+                    <NavLink className={styles.isauth} to={"/login"}>
                         <i className="fa fa-user" aria-hidden="true" />
                         &nbsp;{props.login}
-                    </div>
+                    </NavLink>
                 ) : (
                     <a className={styles.link} href="https://social-network.samuraijs.com/api/1.0/" target="_blank" rel="noreferrer">
                         <i className="fa fa-user" aria-hidden="true" />&nbsp;Sign In
@@ -27,7 +27,7 @@ const Header = (props) => {
             <div className={styles.title}>
                 My social network for learn react js
             </div>
-        </header>
+        </header >
     );
 };
 
