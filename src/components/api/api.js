@@ -35,6 +35,12 @@ export const authAPI = {
             .then(response => {
                 return response.data;
             })
+    },
+    login(loginData) {
+        return instance.put(`auth/login?email=${loginData.email}&password=${loginData.password}&rememberMe=${loginData.rememberMe}&captcha=${true}`)
+            .then(response => {
+                return response.data;
+            })
     }
 }
 

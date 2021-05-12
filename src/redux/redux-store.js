@@ -6,14 +6,16 @@ import sidebarReducer from "./sidebar-reducer";
 import usersReducer from "./users-reducer";
 import thunkMiddleware from "redux-thunk";
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { reducer as formReducer } from 'redux-form';
 
 const reducers = combineReducers({
 
-   profilePage: profileReducer,
-   dialogsPage: dialogsReducer,
-   usersPage: usersReducer,
-   sideBar: sidebarReducer,
-   auth: authReducer
+    profilePage: profileReducer,
+    dialogsPage: dialogsReducer,
+    usersPage: usersReducer,
+    sideBar: sidebarReducer,
+    auth: authReducer,
+    form: formReducer
 
 });
 
