@@ -19,11 +19,11 @@ const ProfileInfo = (props) => {
                     </div>
                     <div className={styles.userData}>
                         <div className={styles.userName}>{props.user.fullName}</div>
-                        <ProfileStatus aboutMe={props.user.aboutMe}/>
+                        <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus} />
+                        <div className={styles.contacts}>About Me: {props.user.aboutMe || "Secretive person"}</div>
                         <div className={styles.job}>
                             {`${props.user.lookingForAJob ? "I seek job" : "I'm working"}
-                            ${props.user.lookingForAJobDescription != null ? " - " : ""}
-                            ${props.user.lookingForAJobDescription != null ? props.user.lookingForAJobDescription : ""}`}
+                            ${props.user.lookingForAJobDescription ? " - " + props.user.lookingForAJobDescription : ""}`}
                         </div>
                         <div className={styles.contacts}>{props.user.contacts.facebook}</div>
                         <div className={styles.contacts}>{props.user.contacts.github}</div>
