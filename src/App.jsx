@@ -10,7 +10,7 @@ import Music from './components/Music/Music';
 import UsersContainer from './components/Users/UsersContainer';
 import Settings from './components/Settings/Settings';
 import HeaderContainer from './components/Header/HeaderContainer';
-import Login from './components/Login/Login';
+import LoginContainer from './components/Login/LoginContainer';
 
 
 const App = (props) => {
@@ -21,14 +21,14 @@ const App = (props) => {
                 <Navbar />
                 {/* <Navbar state={props.state.sideBar} /> */}
                 <div className="app-wrapper-content" >
-                    <Route exact path='/' render={() => <ProfileContainer />} />
+                    <Route exact={true} path='/' render={() => <ProfileContainer />} />
                     <Route path='/profile/:userId?' render={() => <ProfileContainer />} />
                     <Route path='/users' render={() => <UsersContainer />} />
                     <Route path='/dialogs' render={() => <DialogsContainer />} />
                     <Route path='/news' render={() => <News />} />
                     <Route path='/music' render={() => <Music />} />
                     <Route path='/settings' render={() => <Settings />} />
-                    <Route path='/login' render={() => <Login />} />
+                    <Route path='/login' render={() => <LoginContainer />} />
                 </div>
             </div>
         </BrowserRouter>

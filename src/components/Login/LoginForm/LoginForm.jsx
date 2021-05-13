@@ -6,8 +6,8 @@ const LoginForm = (props) => {
 
     return (
         <form className={styles.table} onSubmit={props.handleSubmit}>
-            <Field className={styles.input} name={"email"} placeholder={"E-mail"} component={"input"} />
-            <Field className={styles.input} name={"password"} placeholder={"Password"} component={"input"} />
+            <Field className={styles.input} name={"email"} placeholder={"E-mail"} component={"input"} type={"email"} />
+            <Field className={styles.input} name={"password"} placeholder={"Password"} component={"input"} type={"password"}/>
             <div className={styles.checkbox}>
                 <Field type={"checkbox"} component={"input"} name={"rememberMe"} />
                 Remember Me

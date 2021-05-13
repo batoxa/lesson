@@ -36,8 +36,9 @@ export const authAPI = {
                 return response.data;
             })
     },
-    login(loginData) {
-        return instance.put(`auth/login?email=${loginData.email}&password=${loginData.password}&rememberMe=${loginData.rememberMe}&captcha=${true}`)
+
+    login(email, password, rememberMe, captcha) {
+        return instance.put(`auth/login`, { email, password, rememberMe, captcha })
             .then(response => {
                 return response.data;
             })
@@ -66,9 +67,3 @@ export const profileAPI = {
             })
     },
 }
-
-
-
-
-
-

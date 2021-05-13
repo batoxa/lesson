@@ -3,8 +3,8 @@ import styles from "./Login.module.css";
 import LoginReduxForm from "./LoginForm/LoginForm";
 
 const Login = (props) => {
-    const onSubmit =(formData)=>{
-        console.log(formData.rememberMe);
+    const onSubmit = (formData) => {
+        props.loginUser(formData.email, formData.password, false, true);
     }
     return (
         <div className={styles.wrapper}>
@@ -15,7 +15,5 @@ const Login = (props) => {
         </div>
     );
 };
-
-
 
 export default Login;

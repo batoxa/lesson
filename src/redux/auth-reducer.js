@@ -1,4 +1,6 @@
 import { authAPI } from "../components/api/api";
+import { Redirect } from "react-router";
+
 
 const SET_USERS_DATA = "SET-USERS-DATA";
 
@@ -39,12 +41,14 @@ export const authenticationUser = () => {
     };
 };
 
-export const loginUser = (loginData) => {
+export const loginUser = (email, password, rememberMe, captcha) => {
     return (dispatch) => {
-        authAPI.login(loginData).then((data) => {
+        authAPI.login(email, password, rememberMe, captcha).then((data) => {
+            console.log("data" + data);
             if (data.resultCode === 0) {
-                const { id, login, email } = data.data;
-                dispatch(setAuthUserData(id, login, email));
+                dispatch(authenticationUser()); <
+                Redirect to = { '/profile' }
+                />
             }
         });
     };
