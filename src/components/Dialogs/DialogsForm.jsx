@@ -11,6 +11,6 @@ const DialogsFormRedux = (props) => {
     )
 };
 
-const DialogsForm = reduxForm({ form: "dialogs" })(DialogsFormRedux);
+const DialogsForm = reduxForm({ form: "newDialogsMessage" })(DialogsFormRedux);
 
 export default DialogsForm;
