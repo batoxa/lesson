@@ -9,7 +9,7 @@ const Login = (props) => {
     return (
         <div className={styles.wrapper}>
             <h1 className={styles.text}>
-                Login - <a href='http://localhost:3000/profile/16823'>16823</a>
+                Login <a href='http://localhost:3000/profile/16823'>&#128126;</a>
             </h1>
             <LoginReduxForm onSubmit={onSubmit} />
         </div>

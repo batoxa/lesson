@@ -2,6 +2,12 @@
     padding: 20px;
 }
 
+.text a {
+    text-decoration: none;
+    color: darkorange;
+    padding-left: 20px;
+}
+
 .text {
     line-height: 50px;
     color: #00476b;
