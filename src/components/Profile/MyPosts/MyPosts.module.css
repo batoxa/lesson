@@ -7,11 +7,11 @@
     margin: 0 0 10px 0;
 }
 
-.NewPost textarea {
+.input {
     width: 100%;
     resize: none;
-    padding: 5px;
-    margin-bottom: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
     border: none;
     border-radius: 5px;
     outline: none;
@@ -23,7 +23,7 @@
     border-radius: 5px;
 }
 
-.NewPost button {
+.button {
     border: none;
     border-radius: 7px;
     font-weight: 700;
@@ -32,6 +32,11 @@
     padding: 10px 10px 10px;
     background: #00476b;
     outline: none;
+    transition: 0.5s;
+}
+
+.button:hover {
+    background: darkorange;
 }
 
 .Post {

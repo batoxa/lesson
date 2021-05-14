@@ -32,7 +32,7 @@
     width: 100%;
     resize: none;
     padding: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     border-radius: 5px;
     border: none;
     outline: none;
@@ -47,7 +47,7 @@
     padding: 10px 10px 10px;
     background: #00476b;
     outline: none;
-    transition: 0.7s;
+    transition: 0.5s;
 }
 
 .button:hover {
