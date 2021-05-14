@@ -39,7 +39,7 @@ class ProfileStatus extends React.Component {
                 {" "}
                 {!this.state.editMode ? (
                     <div className={styles.statusView} onDoubleClick={this.activateEditMode}>
-                        Status: {this.props.status || " - - - - -"}
+                        Status: {this.props.status || " - - - - -"} &nbsp; &nbsp; &nbsp; &#128221;
                     </div>
                 ) : (
                     <input

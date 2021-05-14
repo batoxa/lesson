@@ -1,0 +1,13 @@
+.textarea {
+    margin-bottom: 10px;
+}
+
+.textarea.error input,
+.textarea.error textarea {
+    border: 2px red solid;
+}
+
+.textarea.error span {
+    color: red;
+    font-weight: 500;
+}

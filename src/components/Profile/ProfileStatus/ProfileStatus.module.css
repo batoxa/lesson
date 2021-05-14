@@ -3,6 +3,7 @@
     font-size: 18px;
     color: #00476b;
     padding: 5px 0;
+    cursor: pointer;
 }
 
 .statusInput {
