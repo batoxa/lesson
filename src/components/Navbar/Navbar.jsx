@@ -28,6 +28,9 @@ const Navbar = (props) => {
             <li className={styles.sett}>
                <NavLink to="/settings" activeClassName={styles.activeLink}>Settings</NavLink>
             </li>
+            <li className={styles.sett}>
+               <a className={styles.link} href="https://social-network.samuraijs.com/api/1.0/" target="_blank" rel="noreferrer">API</a>
+            </li>
          </ul>
          {/* <div className={styles.fri}>Friends</div>
          <div className={styles.friends}>
