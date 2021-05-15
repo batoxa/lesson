@@ -4,6 +4,7 @@ import { loginUser, logoutUser } from "../../redux/auth-reducer";
 
 const mapStateToProps = (state) => {
     return {
+        userId: state.auth.userId,
         isAuth: state.auth.isAuth,
     };
 };

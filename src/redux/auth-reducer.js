@@ -1,6 +1,4 @@
 import { authAPI } from "../components/api/api";
-// import { Redirect } from "react-router";
-
 
 const SET_USERS_DATA = "SET-USERS-DATA";
 

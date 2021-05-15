@@ -35,3 +35,17 @@
 .link:hover {
     color: gold;
 }
+
+.button {
+    padding-left: 20px;
+    color: gold;
+    outline: none;
+    border: none;
+    background-color: #ff000000;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.button:hover {
+    color: red;
+}
