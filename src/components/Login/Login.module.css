@@ -14,3 +14,20 @@
     margin: 0;
     padding-bottom: 20px;
 }
+
+.button {
+    width: 200px;
+    border: none;
+    border-radius: 7px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px 10px;
+    background: #00476b;
+    outline: none;
+    transition: 0.7s;
+}
+
+.button:hover {
+    background: darkorange;
+}

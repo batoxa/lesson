@@ -1,15 +1,16 @@
 import { connect } from "react-redux";
 import Login from "./Login";
-import { loginUser } from "../../redux/auth-reducer";
-
+import { loginUser, logoutUser } from "../../redux/auth-reducer";
 
 const mapStateToProps = (state) => {
     return {
+        isAuth: state.auth.isAuth,
     };
 };
 
 const LoginContainer = connect(mapStateToProps, {
-    loginUser
+    loginUser,
+    logoutUser,
 })(Login);
 
 export default LoginContainer;

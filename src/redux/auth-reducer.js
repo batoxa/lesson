@@ -1,5 +1,5 @@
 import { authAPI } from "../components/api/api";
-import { Redirect } from "react-router";
+// import { Redirect } from "react-router";
 
 
 const SET_USERS_DATA = "SET-USERS-DATA";
@@ -14,10 +14,9 @@ const initialState = {
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_USERS_DATA:
-            return {
+            return { 
                 ...state,
                 ...action.data,
-                isAuth: true,
             };
 
         default:
@@ -25,33 +24,34 @@ const authReducer = (state = initialState, action) => {
     }
 };
 
-export const setAuthUserData = (userId, login, email) => ({
+export const setAuthUserData = (userId, login, email, isAuth) => ({
     type: SET_USERS_DATA,
-    data: { userId, login, email },
+    data: { userId, login, email, isAuth },
 });
 
-export const authenticationUser = () => {
-    return (dispatch) => {
-        authAPI.authMe().then((data) => {
-            if (data.resultCode === 0) {
-                const { id, login, email } = data.data;
-                dispatch(setAuthUserData(id, login, email));
-            }
-        });
-    };
+export const authenticationUser = () => (dispatch) => {
+    authAPI.authMe().then((data) => {
+        if (data.resultCode === 0) {
+            const { id, login, email } = data.data;
+            dispatch(setAuthUserData(id, login, email, true));
+        }
+    });
 };
 
-export const loginUser = (email, password, rememberMe, captcha) => {
-    return (dispatch) => {
-        authAPI.login(email, password, rememberMe, captcha).then((data) => {
-            console.log("data" + data);
-            if (data.resultCode === 0) {
-                dispatch(authenticationUser()); <
-                Redirect to = { '/profile' }
-                />
-            }
-        });
-    };
+export const loginUser = (email, password, rememberMe) => (dispatch) => {
+    authAPI.login(email, password, rememberMe).then((response) => {
+        if (response.data.resultCode === 0) {
+            dispatch(authenticationUser());
+        }
+    });
+};
+
+export const logoutUser = () => (dispatch) => {
+    authAPI.logout().then((response) => {
+        if (response.data.resultCode === 0) {
+            dispatch(setAuthUserData(null, null, null, false));
+        }
+    });
 };
 
 export default authReducer;

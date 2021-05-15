@@ -4,14 +4,22 @@ import LoginReduxForm from "./LoginForm/LoginForm";
 
 const Login = (props) => {
     const onSubmit = (formData) => {
-        props.loginUser(formData.email, formData.password, false, true);
-    }
+        console.log(formData);
+        props.loginUser(formData.email, formData.password, formData.rememberMe);
+    };
+    const logoutUser = () => {
+        props.logoutUser();
+    };
     return (
         <div className={styles.wrapper}>
-            <h1 className={styles.text}>
-                Login <a href='http://localhost:3000/profile/16823'>&#128126;</a>
-            </h1>
-            <LoginReduxForm onSubmit={onSubmit} />
+            <h1 className={styles.text}> Login </h1>
+            {!props.isAuth ? (
+                <LoginReduxForm onSubmit={onSubmit} />
+            ) : (
+                <button className={styles.button} onClick={logoutUser}>
+                    Logout
+                </button>
+            )}
         </div>
     );
 };
