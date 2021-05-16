@@ -8,7 +8,7 @@ import Profile from "./Profile";
 
 class ProfileContainer extends React.Component {
     componentDidMount() {
-        const userId = this.props.match.params?.userId ?? this.props.user?.userId ?? this.props.userId;
+        const userId = this.props.match.params?.userId ?? this.props.user?.userId ?? this.props.autorizedUserId;
         this.props.getUserProfile(userId);
         this.props.getUserStatus(userId);
     }
@@ -26,7 +26,7 @@ const mapStateToProps = (state) => {
     return {
         user: state.profilePage.userData,
         status: state.profilePage.status,
-        userId: state.auth.userId,
+        autorizedUserId: state.auth.userId,
     };
 };
 

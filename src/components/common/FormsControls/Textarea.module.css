@@ -4,10 +4,12 @@
 
 .textarea.error input,
 .textarea.error textarea {
-    border: 2px red solid;
+    border: 2px brown solid;
 }
 
 .textarea.error span {
-    color: red;
+    font-size: 10px;
+    color: brown;
     font-weight: 500;
+    font-style: italic;
 }

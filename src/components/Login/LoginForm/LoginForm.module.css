@@ -41,3 +41,16 @@
     margin-right: 10px;
     border: 1px solid #00476b;
 }
+
+.error {
+    width: 200px;
+    border-radius: 7px;
+    color: white;
+    padding: 10px;
+    background-color: brown;
+    text-align: center;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 12px;
+
+}
