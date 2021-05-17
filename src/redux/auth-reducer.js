@@ -29,7 +29,7 @@ export const setAuthUserData = (userId, login, email, isAuth) => ({
 });
 
 export const authenticationUser = () => (dispatch) => {
-    authAPI.authMe().then((data) => {
+    return authAPI.authMe().then((data) => {
         if (data.resultCode === 0) {
             const { id, login, email } = data.data;
             dispatch(setAuthUserData(id, login, email, true));
@@ -38,10 +38,6 @@ export const authenticationUser = () => (dispatch) => {
 };
 
 export const loginUser = (email, password, rememberMe) => (dispatch) => {
-
-
-
-
     authAPI.login(email, password, rememberMe).then((response) => {
         if (response.data.resultCode === 0) {
             dispatch(authenticationUser());

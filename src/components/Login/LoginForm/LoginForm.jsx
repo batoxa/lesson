@@ -5,7 +5,6 @@ import { Input } from "../../common/FormsControls/Input";
 import styles from "./LoginForm.module.css";
 
 const LoginForm = (props) => {
-    console.log(props.error);
     return (
         <form className={styles.table} onSubmit={props.handleSubmit}>
             <Field

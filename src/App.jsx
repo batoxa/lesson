@@ -11,15 +11,34 @@ import UsersContainer from './components/Users/UsersContainer';
 import Settings from './components/Settings/Settings';
 import HeaderContainer from './components/Header/HeaderContainer';
 import LoginContainer from './components/Login/LoginContainer';
+import { connect } from 'react-redux';
+import { withRouter } from "react-router";
+import { initializeApp } from "./redux/app-reducer";
+import { authenticationUser } from "./redux/auth-reducer";
 
+import { compose } from 'redux';
+import Preloader from './components/common/Preloader/Preloader';
 
-const App = (props) => {
-    return (
-        <BrowserRouter >
+class App extends React.Component {
+
+    componentDidMount() {
+        this.props.initializeApp();
+    }
+    componentDidUpdate(prevProps) {
+        if (this.props.isAuth !== prevProps.isAuth) {
+            this.props.authenticationUser();
+        }
+    }
+
+    render() {
+        if (!this.props.initialized) {
+            return <Preloader />
+        }
+
+        return < BrowserRouter >
             <div className="app-wrapper" >
                 <HeaderContainer />
                 <Navbar />
-                {/* <Navbar state={props.state.sideBar} /> */}
                 <div className="app-wrapper-content" >
                     <Route exact={true} path='/' render={() => <ProfileContainer />} />
                     <Route path='/profile/:userId?' render={() => <ProfileContainer />} />
@@ -31,8 +50,20 @@ const App = (props) => {
                     <Route path='/login' render={() => <LoginContainer />} />
                 </div>
             </div>
-        </BrowserRouter>
-    );
+        </BrowserRouter >
+    }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+    return {
+        initialized: state.app.initialized,
+        isAuth: state.auth.isAuth,
+    };
+};
+
+export default compose(
+    withRouter,
+    connect(mapStateToProps, { initializeApp, authenticationUser }),
+)(App);
+
+
