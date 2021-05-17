@@ -6,12 +6,12 @@ import classNames from "classnames";
 
 class Users extends React.Component {
     componentDidMount() {
-        this.props.getUsers(this.props.activePage, this.props.pageSize);
+        this.props.getPageUsers(this.props.activePage, this.props.pageSize);
     }
 
     componentDidUpdate(prevProps) {
         if (this.props.activePage !== prevProps.activePage) {
-            this.props.getUsers(this.props.activePage, this.props.pageSize);
+            this.props.getPageUsers(this.props.activePage, this.props.pageSize);
         }
     }
 

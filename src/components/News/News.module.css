@@ -1,4 +1,10 @@
-.wrapper{
-   padding: 20px;
+.wrapper {
+    padding: 20px;
 }
 
+.head {
+    padding-bottom: 10px;
+    font-weight: 700;
+    color: #00476b;
+    font-size: 20px;
+}

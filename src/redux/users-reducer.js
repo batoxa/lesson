@@ -24,9 +24,9 @@ const usersReducer = (state = initialState, action) => {
         case TOGGLE_IS_FOLLOW:
             return {
                 ...state,
-                isFollow: action.isFollow
-                    ? [...state.isFollow, action.userId]
-                    : [...state.isFollow.filter((id) => id !== action.userId)],
+                isFollow: action.isFollow ?
+                    [...state.isFollow, action.userId] :
+                    [...state.isFollow.filter((id) => id !== action.userId)],
             };
 
         case IS_FETCHING:
@@ -76,7 +76,7 @@ const usersReducer = (state = initialState, action) => {
                 ...state,
                 users: state.users.map((user) => {
                     if (user.id === action.userId) {
-                        return { ...user, followed: true };
+                        return {...user, followed: true };
                     }
                     return user;
                 }),
@@ -87,7 +87,7 @@ const usersReducer = (state = initialState, action) => {
                 ...state,
                 users: state.users.map((user) => {
                     if (user.id === action.userId) {
-                        return { ...user, followed: false };
+                        return {...user, followed: false };
                     }
                     return user;
                 }),
@@ -127,7 +127,7 @@ export const toggleIsFollow = (isFollow, userId) => ({
     userId,
 });
 
-export const getUsers = (activePage, pageSize) => {
+export const getPageUsers = (activePage, pageSize) => {
     return (dispatch) => {
         dispatch(isFetching(true));
         userAPI.getUsers(activePage, pageSize).then((data) => {
