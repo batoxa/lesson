@@ -1,4 +1,5 @@
 import { userAPI } from "../components/api/api";
+import { getFriends, deleteFriends } from "./sidebar-reducer";
 
 const SET_USERS = "SET-USERS";
 const FOLLOW_USER = "FOLLOW-USER";
@@ -14,7 +15,8 @@ const initialState = {
     users: [],
     pageSize: 5,
     totalUsersCount: 0,
-    activePage: 2412,
+    activePage: 1,
+    // activePage: 2412,
     isLoading: false,
     isFollow: [],
 };
@@ -76,7 +78,7 @@ const usersReducer = (state = initialState, action) => {
                 ...state,
                 users: state.users.map((user) => {
                     if (user.id === action.userId) {
-                        return {...user, followed: true };
+                        return { ...user, followed: true };
                     }
                     return user;
                 }),
@@ -87,7 +89,7 @@ const usersReducer = (state = initialState, action) => {
                 ...state,
                 users: state.users.map((user) => {
                     if (user.id === action.userId) {
-                        return {...user, followed: false };
+                        return { ...user, followed: false };
                     }
                     return user;
                 }),
@@ -144,6 +146,8 @@ export const unfollow = (userId) => {
         userAPI.setUnfollow(userId).then((data) => {
             if (data.resultCode === 0) {
                 dispatch(unfollowUser(userId));
+                dispatch(deleteFriends(userId));
+
             }
             dispatch(toggleIsFollow(false, userId));
         });
@@ -156,6 +160,8 @@ export const follow = (userId) => {
         userAPI.setFollow(userId).then((data) => {
             if (data.resultCode === 0) {
                 dispatch(followUser(userId));
+                dispatch(getFriends()); //change
+
             }
             dispatch(toggleIsFollow(false, userId));
         });

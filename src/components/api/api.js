@@ -13,6 +13,12 @@ export const userAPI = {
                 return response.data;
             })
     },
+    getFriends() {
+        return instance.get(`users?friend=${true}`)
+            .then(response => {
+                return response.data;
+            })
+    },
 
     setFollow(userId) {
         return instance.post(`follow/${userId}`)

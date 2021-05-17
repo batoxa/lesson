@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar';
+import NavbarContainer from './components/Navbar/NavbarContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import News from './components/News/News';
@@ -38,7 +38,7 @@ class App extends React.Component {
         return < BrowserRouter >
             <div className="app-wrapper" >
                 <HeaderContainer />
-                <Navbar />
+                <NavbarContainer />
                 <div className="app-wrapper-content" >
                     <Route exact={true} path='/' render={() => <ProfileContainer />} />
                     <Route path='/profile/:userId?' render={() => <ProfileContainer />} />
