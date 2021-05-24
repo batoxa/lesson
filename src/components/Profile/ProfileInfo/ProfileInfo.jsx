@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./ProfileInfo.module.css";
 import userPhoto from "../../../assets/images/user.png";
 import Preloader from "../../common/Preloader/Preloader";
-import ProfileStatus from "../ProfileStatus/ProfileStatus";
+import ProfileStatusWithHooks from "../ProfileStatus/ProfileStatusWithHooks";
+// import ProfileStatus from "../ProfileStatus/ProfileStatus";
 
 const ProfileInfo = (props) => {
     // if (props.user?.userId) {
@@ -19,7 +20,8 @@ const ProfileInfo = (props) => {
                     </div>
                     <div className={styles.userData}>
                         <div className={styles.userName}>{props.user.fullName}</div>
-                        <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus} />
+                        {/* <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus} /> */}
+                        <ProfileStatusWithHooks status={props.status} updateUserStatus={props.updateUserStatus} />
                         <div className={styles.contacts}>About Me: {props.user.aboutMe || "Secretive person"}</div>
                         <div className={styles.job}>
                             {`${props.user.lookingForAJob ? "I seek job" : "I'm working"}
