@@ -3,7 +3,7 @@ import styles from "./MyPosts.module.css";
 import MyPostsForm from "./MyPostsForm";
 import Post from "./Post/Post";
 
-const MyPosts = (props) => {
+const MyPosts = React.memo((props) => {
     const posts = props.posts.map((post) => <Post message={post.message} likecounts={post.likecounts} key={post.id} />);
 
     const addingPost = (newPostText) => {
@@ -18,6 +18,6 @@ const MyPosts = (props) => {
             <div className={styles.Post}>{posts}</div>
         </div>
     );
-};
+});
 
 export default MyPosts;
