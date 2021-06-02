@@ -1,8 +1,8 @@
 import { userAPI } from "../components/api/api";
 
-const SET_FRIENDS = "SET-FRIENDS";
-const ADD_FRIENDS = "ADD-FRIENDS";
-const DELETE_FRIENDS = "DELETE-FRIENDS";
+const SET_FRIENDS = "sidebar/SET-FRIENDS";
+const ADD_FRIENDS = "sidebar/ADD-FRIENDS";
+const DELETE_FRIENDS = "sidebar/DELETE-FRIENDS";
 
 const initialState = {
     friendData: [
@@ -54,6 +54,3 @@ export const getFriends = () => {
 
 
 export default sidebarReducer;
-
-
-

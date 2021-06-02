@@ -1,9 +1,9 @@
 import { profileAPI } from "../components/api/api";
 
-const ADD_POST = 'ADD-POST';
-const DELETE_POST = 'DELETE-POST';
-const SET_USER_PROFILE = 'SET-USER-PROFILE';
-const SET_STATUS = 'SET-STATUS';
+const ADD_POST = 'profile/ADD-POST';
+const DELETE_POST = 'profile/DELETE-POST';
+const SET_USER_PROFILE = 'profile/SET-USER-PROFILE';
+const SET_STATUS = 'profile/SET-STATUS';
 
 const initialState = {
     postData: [
@@ -20,10 +20,10 @@ const profileReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case SET_USER_PROFILE:
-            return { ...state, userData: action.userData };
+            return {...state, userData: action.userData };
 
         case SET_STATUS:
-            return { ...state, status: action.status };
+            return {...state, status: action.status };
 
         case ADD_POST:
             {
@@ -32,13 +32,13 @@ const profileReducer = (state = initialState, action) => {
                     message: action.newPostText,
                     likecounts: 0
                 };
-                let stateCopy = { ...state };
+                let stateCopy = {...state };
                 stateCopy.postData = [...state.postData];
                 stateCopy.postData.push(newPost);
                 return stateCopy;
             };
         case DELETE_POST:
-            return { ...state, postData: state.postData.filter(post => post.id !== action.postId) };
+            return {...state, postData: state.postData.filter(post => post.id !== action.postId) };
 
 
         default:

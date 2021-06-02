@@ -1,15 +1,15 @@
 import { userAPI } from "../components/api/api";
 import { getFriends, deleteFriends } from "./sidebar-reducer";
 
-const SET_USERS = "SET-USERS";
-const FOLLOW_USER = "FOLLOW-USER";
-const UNFOLLOW_USER = "UNFOLLOW-USER";
-const SET_ACTIVE_PAGE = "SET-ACTIVE-PAGE";
-const SET_TOTAL_COUNT = "SET-TOTAL-COUNT";
-const GET_NEXT_PAGE = "GET-NEXT-PAGE";
-const GET_PREV_PAGE = "GET-PREV-PAGE";
-const IS_FETCHING = "IS-FETCHING";
-const TOGGLE_IS_FOLLOW = "TOGGLE-IS-FOLLOW";
+const SET_USERS = "users/SET-USERS";
+const FOLLOW_USER = "users/FOLLOW-USER";
+const UNFOLLOW_USER = "users/UNFOLLOW-USER";
+const SET_ACTIVE_PAGE = "users/SET-ACTIVE-PAGE";
+const SET_TOTAL_COUNT = "users/SET-TOTAL-COUNT";
+const GET_NEXT_PAGE = "users/GET-NEXT-PAGE";
+const GET_PREV_PAGE = "users/GET-PREV-PAGE";
+const IS_FETCHING = "users/IS-FETCHING";
+const TOGGLE_IS_FOLLOW = "users/TOGGLE-IS-FOLLOW";
 
 const initialState = {
     users: [],
@@ -26,9 +26,7 @@ const usersReducer = (state = initialState, action) => {
         case TOGGLE_IS_FOLLOW:
             return {
                 ...state,
-                isFollow: action.isFollow ?
-                    [...state.isFollow, action.userId] :
-                    [...state.isFollow.filter((id) => id !== action.userId)],
+                isFollow: action.isFollow ? [...state.isFollow, action.userId] : [...state.isFollow.filter((id) => id !== action.userId)],
             };
 
         case IS_FETCHING:
@@ -78,7 +76,7 @@ const usersReducer = (state = initialState, action) => {
                 ...state,
                 users: state.users.map((user) => {
                     if (user.id === action.userId) {
-                        return { ...user, followed: true };
+                        return {...user, followed: true };
                     }
                     return user;
                 }),
@@ -89,7 +87,7 @@ const usersReducer = (state = initialState, action) => {
                 ...state,
                 users: state.users.map((user) => {
                     if (user.id === action.userId) {
-                        return { ...user, followed: false };
+                        return {...user, followed: false };
                     }
                     return user;
                 }),

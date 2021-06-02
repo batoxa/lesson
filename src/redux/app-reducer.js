@@ -1,6 +1,6 @@
 import { authenticationUser } from "./auth-reducer";
 
-const INITIALIZED_SUCSESS = "INITIALIZED-SUCSESS";
+const INITIALIZED_SUCSESS = "app/INITIALIZED-SUCSESS";
 
 const initialState = {
     initialized: false,
