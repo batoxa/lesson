@@ -44,13 +44,10 @@ export const addFriends = (userId) => ({ type: ADD_FRIENDS, userId });
 export const deleteFriends = (userId) => ({ type: DELETE_FRIENDS, userId });
 
 export const getFriends = () => {
-    return (dispatch) => {
-        userAPI.getFriends().then((data) => {
-            dispatch(setFriends(data.items));
-            console.log(data.items);
-        });
+    return async(dispatch) => {
+        const data = await userAPI.getFriends();
+        dispatch(setFriends(data.items));
     };
 };
-
 
 export default sidebarReducer;
