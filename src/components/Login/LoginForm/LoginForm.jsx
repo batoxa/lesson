@@ -1,6 +1,6 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-import { required } from "../../../Validation/Validation";
+import { required } from "../../../utils/Validation/Validation";
 import { Input } from "../../common/FormsControls/Input";
 import styles from "./LoginForm.module.css";
 

@@ -1,4 +1,5 @@
 import { userAPI } from "../components/api/api";
+import { updateObjectInArray } from "../utils/Validation/object-helpers";
 import { getFriends, deleteFriends } from "./sidebar-reducer";
 
 const SET_USERS = "users/SET-USERS";
@@ -74,23 +75,13 @@ const usersReducer = (state = initialState, action) => {
         case FOLLOW_USER:
             return {
                 ...state,
-                users: state.users.map((user) => {
-                    if (user.id === action.userId) {
-                        return {...user, followed: true };
-                    }
-                    return user;
-                }),
+                users: updateObjectInArray(state.users, action.userId, "id", { followed: true })
             };
 
         case UNFOLLOW_USER:
             return {
                 ...state,
-                users: state.users.map((user) => {
-                    if (user.id === action.userId) {
-                        return {...user, followed: false };
-                    }
-                    return user;
-                }),
+                users: updateObjectInArray(state.users, action.userId, "id", { followed: false })
             };
 
         case SET_USERS:
