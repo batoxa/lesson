@@ -1,0 +1,26 @@
+.pagesList {
+    display: flex;
+    flex-wrap: wrap;
+    color: #00476b;
+    padding-bottom: 10px;
+    padding-left: 70px;
+}
+
+.pagesList>button:hover {
+    color: #ff0000;
+}
+
+.pageNumberButton {
+    padding-left: 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #00476b;
+    background-color: #e2e1e3;
+    font-size: 16px;
+}
+
+.selected {
+    color: #00476b;
+    font-weight: bold;
+}

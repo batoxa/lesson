@@ -1,6 +1,6 @@
 import { userAPI } from "../components/api/api";
-import { updateObjectInArray } from "../utils/Validation/object-helpers";
-import { getFriends, deleteFriends } from "./sidebar-reducer";
+import { updateObjectInArray } from "../utils/object-helpers";
+import { getFriends } from "./sidebar-reducer";
 
 const SET_USERS = "users/SET-USERS";
 const FOLLOW_USER = "users/FOLLOW-USER";
@@ -129,31 +129,27 @@ export const getPageUsers = (activePage, pageSize) => {
     };
 };
 
-export const unfollow = (userId) => {
-    return (dispatch) => {
-        dispatch(toggleIsFollow(true, userId));
-        userAPI.setUnfollow(userId).then((data) => {
-            if (data.resultCode === 0) {
-                dispatch(unfollowUser(userId));
-                dispatch(deleteFriends(userId));
+const followUnfollowFlow = async (dispatch, userId, apiMethod, actionCreater) => {
+    dispatch(toggleIsFollow(true, userId));
+    const data = await apiMethod(userId)
+    if (data.resultCode === 0) {
+        dispatch(actionCreater(userId));
+        dispatch(getFriends());
+    }
+    dispatch(toggleIsFollow(false, userId));
 
-            }
-            dispatch(toggleIsFollow(false, userId));
-        });
+}
+
+
+export const unfollow = (userId) => {
+    return async (dispatch) => {
+        followUnfollowFlow(dispatch, userId, userAPI.setUnfollow.bind(userId), unfollowUser)
     };
 };
 
 export const follow = (userId) => {
     return (dispatch) => {
-        dispatch(toggleIsFollow(true, userId));
-        userAPI.setFollow(userId).then((data) => {
-            if (data.resultCode === 0) {
-                dispatch(followUser(userId));
-                dispatch(getFriends()); //change
-
-            }
-            dispatch(toggleIsFollow(false, userId));
-        });
+        followUnfollowFlow(dispatch, userId, userAPI.setFollow.bind(userId), followUser)
     };
 };
 

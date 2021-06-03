@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Users.module.css";
-import classNames from "classnames";
 import { UserItem } from "./UserItem/UserItem";
 import { UserItemPreloader } from "./UserItemPreloader/UserItemPreloader";
+import { Paginator } from "../common/Paginator/Paginator";
 
 class Users extends React.Component {
     componentDidMount() {
@@ -29,19 +29,7 @@ class Users extends React.Component {
             unfollow,
             follow,
         } = this.props;
-
-        const pages = [];
-        if (activePage < 9) {
-            for (let i = 1; i <= 16; i++) {
-                pages.push(i);
-            }
-        } else {
-            for (let i = activePage - 8; i <= activePage + 8; i++) {
-                if (i <= Math.ceil(totalUsersCount / pageSize)) {
-                    pages.push(i);
-                }
-            }
-        }
+        
         return (
             <div className={styles.wrapper}>
                 <div className={styles.head}>Users list: </div>
@@ -56,22 +44,7 @@ class Users extends React.Component {
                         <UserItem key={user.id} user={user} follow={follow} unfollow={unfollow} isFollow={isFollow} />
                     ))
                 )}
-                <div className={styles.pagesList}>
-                    Page:
-                    {pages.map((pageNumber) => (
-                    <button
-                        key={pageNumber}
-                        className={classNames(styles.pageNumberButton, {
-                            [styles.selected]: activePage === pageNumber,
-                        })}
-                        onClick={() => {
-                            setActivePage(pageNumber);
-                        }}
-                    >
-                        {pageNumber}
-                    </button>
-                ))}
-                </div>
+                <Paginator pageSize={pageSize}  totalUsersCount={totalUsersCount} activePage={activePage} setActivePage={setActivePage} />
                 <button className={styles.prevPageButton} onClick={getPrevPage}>
                     Previous
                 </button>
