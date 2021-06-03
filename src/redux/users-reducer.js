@@ -129,7 +129,7 @@ export const getPageUsers = (activePage, pageSize) => {
     };
 };
 
-const followUnfollowFlow = async (dispatch, userId, apiMethod, actionCreater) => {
+const changeFollowing = async (dispatch, userId, apiMethod, actionCreater) => {
     dispatch(toggleIsFollow(true, userId));
     const data = await apiMethod(userId)
     if (data.resultCode === 0) {
@@ -137,19 +137,17 @@ const followUnfollowFlow = async (dispatch, userId, apiMethod, actionCreater) =>
         dispatch(getFriends());
     }
     dispatch(toggleIsFollow(false, userId));
-
 }
 
-
 export const unfollow = (userId) => {
-    return async (dispatch) => {
-        followUnfollowFlow(dispatch, userId, userAPI.setUnfollow.bind(userId), unfollowUser)
+    return (dispatch) => {
+        changeFollowing(dispatch, userId, userAPI.setUnfollow.bind(userAPI), unfollowUser);
     };
 };
 
 export const follow = (userId) => {
     return (dispatch) => {
-        followUnfollowFlow(dispatch, userId, userAPI.setFollow.bind(userId), followUser)
+        changeFollowing(dispatch, userId, userAPI.setFollow.bind(userAPI), followUser);
     };
 };
 

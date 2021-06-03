@@ -1,4 +1,4 @@
-import profileReducer, { addPostActionCreater, deletePostActionCreater } from "./profile-reducer";
+import { profileReducer, addPostActionCreater, deletePostActionCreater } from "./profile-reducer";
 
 const state = {
     postData: [
