@@ -1,8 +1,8 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
-import NavFriend from "./NavFriend/NavFriend";
 import userPhoto from "../../assets/images/user.png";
+import { NavLink } from "react-router-dom";
+import { NavFriend } from "./NavFriend/NavFriend";
 
 const Navbar = (props) => {
     let friends = props.friendData.map((friend) => (
@@ -59,4 +59,4 @@ const Navbar = (props) => {
     );
 };
 
-export default Navbar;
+export { Navbar };

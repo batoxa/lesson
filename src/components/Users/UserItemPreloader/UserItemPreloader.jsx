@@ -19,7 +19,7 @@ const UserItemPreloader = (props) => {
    );
 }
 
-export default UserItemPreloader;
+export { UserItemPreloader };
 
 
 

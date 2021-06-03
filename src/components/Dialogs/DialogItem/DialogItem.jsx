@@ -13,7 +13,7 @@ const DialogItem = (props) => {
    );
 }
 
-export default DialogItem;
+export { DialogItem };
 
 
 

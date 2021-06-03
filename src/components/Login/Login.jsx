@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Login.module.css";
-import LoginReduxForm from "./LoginForm/LoginForm";
+import { LoginReduxForm } from "./LoginForm/LoginForm";
 import { Redirect } from "react-router";
 
 const Login = (props) => {
@@ -16,4 +16,4 @@ const Login = (props) => {
     );
 };
 
-export default Login;
+export { Login };

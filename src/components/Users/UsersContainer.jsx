@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { setActivePage, getNextPage, getPrevPage, getPageUsers, unfollow, follow } from "../../redux/users-reducer";
 import { getUsers, getPageSize, getTotalUsersCount, getActivePage, getIsLoading, getIsFollow } from "../../redux/users-selectors";
-import Users from "./Users";
+import { Users } from "./Users";
 
 const mapStateToProps = (state) => {
     return {
@@ -30,4 +30,4 @@ const UsersContainer = connect(mapStateToProps, {
     follow,
 })(Users);
 
-export default UsersContainer;
+export { UsersContainer };

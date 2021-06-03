@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./MyPosts.module.css";
-import MyPostsForm from "./MyPostsForm";
-import Post from "./Post/Post";
+import { MyPostsForm } from "./MyPostsForm";
+import { Post } from "./Post/Post";
 
 const MyPosts = React.memo((props) => {
     const posts = props.posts.map((post) => <Post message={post.message} likecounts={post.likecounts} key={post.id} />);
@@ -20,4 +20,4 @@ const MyPosts = React.memo((props) => {
     );
 });
 
-export default MyPosts;
+export { MyPosts };

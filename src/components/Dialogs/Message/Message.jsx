@@ -11,7 +11,7 @@ const Message = (props) => {
       </div>
    );
 }
-export default Message;
+export { Message };
 
 
 

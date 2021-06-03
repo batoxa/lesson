@@ -1,8 +1,8 @@
 import React from "react";
-import DialogItem from "./DialogItem/DialogItem";
-import Message from "./Message/Message";
 import styles from "./Dialogs.module.css";
-import DialogsForm from "./DialogsForm";
+import { DialogItem } from "./DialogItem/DialogItem";
+import { Message } from "./Message/Message";
+import { DialogsForm } from "./DialogsForm";
 
 const Dialogs = (props) => {
     const dialogsElements = props.dialogsPage.dialogsData.map((dialog) => (
@@ -28,4 +28,4 @@ const Dialogs = (props) => {
         </div>
     );
 };
-export default Dialogs;
+export { Dialogs };

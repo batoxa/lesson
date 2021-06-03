@@ -10,4 +10,4 @@ const Music = (props) => {
    );
 }
 
-export default Music;
+export {Music};

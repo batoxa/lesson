@@ -1,8 +1,8 @@
 import React from "react";
+import styles from "./MyPosts.module.css";
 import { Field, reduxForm } from "redux-form";
 import { required, maxLength } from "../../../utils/Validation/Validation";
 import { Textarea } from "../../common/FormsControls/Textarea";
-import styles from "./MyPosts.module.css";
 
 export const maxLengthPost = maxLength(300)
 
@@ -17,4 +17,4 @@ const MyPostsFormRedux = (props) => {
 
 const MyPostsForm = reduxForm({ form: "newProfilePost" })(MyPostsFormRedux);
 
-export default MyPostsForm;
+export { MyPostsForm };

@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./ProfileInfo.module.css";
 import userPhoto from "../../../assets/images/user.png";
-import Preloader from "../../common/Preloader/Preloader";
-import ProfileStatusWithHooks from "../ProfileStatus/ProfileStatusWithHooks";
+import { Preloader } from "../../common/Preloader/Preloader";
+import { ProfileStatusWithHooks } from "../ProfileStatus/ProfileStatusWithHooks";
 // import ProfileStatus from "../ProfileStatus/ProfileStatus";
 
 const ProfileInfo = (props) => {
@@ -44,4 +44,4 @@ const ProfileInfo = (props) => {
     );
 };
 
-export default ProfileInfo;
+export { ProfileInfo };

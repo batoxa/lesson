@@ -7,4 +7,4 @@ const Preloader = () => {
    );
 }
 
-export default Preloader;
+export { Preloader };

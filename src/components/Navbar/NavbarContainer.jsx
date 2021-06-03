@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getFriends } from "../../redux/sidebar-reducer";
-import Navbar from "./Navbar";
+import { Navbar } from "./Navbar";
 
 class NavbarContainer extends React.Component {
     componentDidMount() {
@@ -19,4 +19,6 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps, { getFriends })(NavbarContainer);
+const navbarBox = connect(mapStateToProps, { getFriends })(NavbarContainer);
+
+export { navbarBox as NavbarContainer }

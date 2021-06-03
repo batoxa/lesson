@@ -1,5 +1,5 @@
 import React from 'react';
-import Preloader from '../common/Preloader/Preloader';
+import PreloaderWite from '../common/PreloaderWite/PreloaderWite';
 import styles from './News.module.css';
 
 
@@ -7,9 +7,9 @@ const News = (props) => {
    return (
       <div className={styles.wrapper}>
          <div className={styles.head}> News</div>
-         <Preloader />
+         <PreloaderWite />
       </div>
    );
 }
 
-export default News;
+export {News};

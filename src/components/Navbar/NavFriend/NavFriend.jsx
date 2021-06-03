@@ -11,4 +11,4 @@ const NavFriend = (props) => {
    );
 }
 
-export default NavFriend;
+export { NavFriend };

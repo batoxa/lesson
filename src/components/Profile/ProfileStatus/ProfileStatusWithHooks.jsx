@@ -38,4 +38,4 @@ const ProfileStatusWithHooks = (props) => {
     );
 };
 
-export default ProfileStatusWithHooks;
+export { ProfileStatusWithHooks };

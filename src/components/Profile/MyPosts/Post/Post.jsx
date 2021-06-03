@@ -17,4 +17,4 @@ const Post = (props) => {
    );
 }
 
-export default Post;
+export { Post };

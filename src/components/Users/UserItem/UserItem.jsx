@@ -47,4 +47,4 @@ const UserItem = (props) => {
     );
 };
 
-export default UserItem;
+export { UserItem };

@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Users.module.css";
-import UserItem from "./UserItem/UserItem";
-import UserItemPreloader from "./UserItemPreloader/UserItemPreloader";
 import classNames from "classnames";
+import { UserItem } from "./UserItem/UserItem";
+import { UserItemPreloader } from "./UserItemPreloader/UserItemPreloader";
 
 class Users extends React.Component {
     componentDidMount() {
@@ -59,18 +59,18 @@ class Users extends React.Component {
                 <div className={styles.pagesList}>
                     Page:
                     {pages.map((pageNumber) => (
-                        <button
-                            key={pageNumber}
-                            className={classNames(styles.pageNumberButton, {
-                                [styles.selected]: activePage === pageNumber,
-                            })}
-                            onClick={() => {
-                                setActivePage(pageNumber);
-                            }}
-                        >
-                            {pageNumber}
-                        </button>
-                    ))}
+                    <button
+                        key={pageNumber}
+                        className={classNames(styles.pageNumberButton, {
+                            [styles.selected]: activePage === pageNumber,
+                        })}
+                        onClick={() => {
+                            setActivePage(pageNumber);
+                        }}
+                    >
+                        {pageNumber}
+                    </button>
+                ))}
                 </div>
                 <button className={styles.prevPageButton} onClick={getPrevPage}>
                     Previous
@@ -82,4 +82,4 @@ class Users extends React.Component {
         );
     }
 }
-export default Users;
+export { Users };
