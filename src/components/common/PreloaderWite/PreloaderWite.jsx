@@ -11,4 +11,4 @@ const PreloaderWite = () => {
     );
 };
 
-export default PreloaderWite;
+export { PreloaderWite };

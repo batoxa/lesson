@@ -20,10 +20,10 @@ const profileReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case SET_USER_PROFILE:
-            return {...state, userData: action.userData };
+            return { ...state, userData: action.userData };
 
         case SET_STATUS:
-            return {...state, status: action.status };
+            return { ...state, status: action.status };
 
         case ADD_POST:
             {
@@ -32,13 +32,13 @@ const profileReducer = (state = initialState, action) => {
                     message: action.newPostText,
                     likecounts: 0
                 };
-                let stateCopy = {...state };
+                let stateCopy = { ...state };
                 stateCopy.postData = [...state.postData];
                 stateCopy.postData.push(newPost);
                 return stateCopy;
             };
         case DELETE_POST:
-            return {...state, postData: state.postData.filter(post => post.id !== action.postId) };
+            return { ...state, postData: state.postData.filter(post => post.id !== action.postId) };
 
 
         default:
@@ -52,24 +52,24 @@ export const addPostActionCreater = (newPostText) => ({ type: ADD_POST, newPostT
 export const deletePostActionCreater = (postId) => ({ type: DELETE_POST, postId });
 
 export const getUserProfile = (userId) => {
-    return async(dispatch) => {
+    return async (dispatch) => {
         const data = await profileAPI.userProfile(userId);
         dispatch(setUserProfile(data));
     };
 };
 
 export const getUserStatus = (userId) => {
-    return async(dispatch) => {
+    return async (dispatch) => {
         const data = await profileAPI.userStatus(userId)
         dispatch(setUserStatus(data));
     };
 };
 
 export const updateUserStatus = (status) => {
-    return async(dispatch) => {
+    return async (dispatch) => {
         const response = await profileAPI.updateStatus(status);
         if (response.resultCode === 0) { dispatch(setUserStatus(status)) };
     };
 };
 
-export default profileReducer;
+export { profileReducer };

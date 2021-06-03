@@ -39,7 +39,8 @@ class ProfileStatus extends React.Component {
                 {" "}
                 {!this.state.editMode ? (
                     <div className={styles.statusView} onDoubleClick={this.activateEditMode}>
-                        Status: {this.props.status || " - - - - -"} &nbsp; &nbsp; &nbsp; <i className="fa fa-pencil-square-o" aria-hidden="true"/>
+                        Status: {this.props.status || " - - - - -"} &nbsp; &nbsp; &nbsp;{" "}
+                        <i className='fa fa-pencil-square-o' aria-hidden='true' />
                     </div>
                 ) : (
                     <input
@@ -55,4 +56,4 @@ class ProfileStatus extends React.Component {
     }
 }
 
-export default ProfileStatus;
+export { ProfileStatus };
